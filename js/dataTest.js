@@ -10,7 +10,7 @@ function getData(){
         // console.log(data.confirmationgroup.confirmation);
         console.log('Data incoming from Justfields.com');
         data.confirmationgroup.confirmation.forEach(function(confirmation){
-            console.log(confirmation.name +', '+ confirmation.email +', '+ confirmation.phone +', '+ confirmation.date +', '+ confirmation.time +', '+ confirmation.gender +', '+ confirmation.style );
+            console.log(confirmation.name +', '+ confirmation.id +', '+ confirmation.email +', '+ confirmation.phone +', '+ confirmation.date +', '+ confirmation.time +', '+ confirmation.gender +', '+ confirmation.style );
         });
     });
 };

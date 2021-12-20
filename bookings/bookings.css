@@ -6,26 +6,14 @@ body {
     color: white!important;
 }
 
-header {
-    background-color: #C4C4C4;
+.navbar {
+    background:rgb(185, 185, 185);
 }
 
-header span {
-    color: #633D3D;
-    font-weight: 700;
-    font-size: 2rem;;
-}
-
-.svg-wrap {
-    background-color: blueviolet;
-    padding: 5px;
-    margin: 0px 5px;
-    border-radius: 60px;
-}
-
-.nav-wrap {
-    display: grid;
-    align-items: center;
+.navbar-brand-wrp a{   
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 400;
 }
 
 .nav-item a{
@@ -35,7 +23,7 @@ header span {
 }
 
 .nav-item a:hover{
-    color: white;
+    color: white!important;
 }
 
 .cover {
@@ -67,7 +55,7 @@ header span {
 .absolute-logo {
     height: 300px;
     width: 300px;
-    background: rgb(191, 149, 247);
+    background: rgb(216, 190, 250);
     border-radius: 160px;
     position: absolute;
     bottom: -150px;

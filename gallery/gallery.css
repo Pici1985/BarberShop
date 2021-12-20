@@ -1,3 +1,21 @@
-body {
-    background-color: magenta;
+*{
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    width: 70vw;
+}
+.image-gallery{
+    background-size: cover;
+    height: 100vh;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 8px;
+    flex: 0.5;
+    background-repeat: no-repeat;
+    
+}
+.image-gallery.large {
+    flex:5;
 }

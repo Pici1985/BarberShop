@@ -10,11 +10,22 @@ body {
     background:rgb(185, 185, 185);
 }
 
-.navbar-brand-wrp a{   
-    color: black;
-    font-size: 1.5rem;
-    font-weight: 400;
+#togglerbutton{
+    border: 2px solid #633D3D;
 }
+
+#togglerbutton:focus {
+    border: 3px solid #633D3D!important;
+    box-shadow: 0 0 0 0!important;
+}
+
+.navbar-toggler-icon {
+    color:  #633D3D!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .nav-item a{
     color: #633D3D;

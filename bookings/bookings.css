@@ -1,8 +1,15 @@
 /* // X-Small devices (portrait phones, less than 576px) */
 /* // No media query for `xs` since this is the default in Bootstrap */
 
-body {
-    background-color: white;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0px auto;
 }
 
 .active {
@@ -82,6 +89,58 @@ body {
 .absolute-logo svg {
     height: 75px;
     width: 75px;
+}
+
+.container {
+    /* background: white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.titles{
+    margin: 20px auto;
+    display: grid;
+    align-items: center;
+}
+
+.titles h1 {
+    font-size: 4rem;
+    font-family: 'Rouge Script', cursive;
+    text-shadow: 5px 5px 5px grey;
+}
+
+.form {
+    width: 100%;
+    border: 1px solid red;
+}
+
+.wrapper {
+    min-height: 100%;
+    /* Equal to height of footer */
+    /* But also accounting for potential margin-bottom of last child */
+    margin-bottom: -66px;
+    background: linear-gradient(rgba(138, 105, 90, 0), rgb(138, 105, 90, 1));
+
+}
+
+.push {
+    height: 66px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(185, 185, 185);
+    height: 66px;
+}
+
+footer span {
+    color: #633D3D;
+    font-weight: 500;
+    font-size: 1.25rem;    
 }
 
 

@@ -113,7 +113,13 @@ html, body {
 
 .form {
     width: 100%;
-    border: 1px solid red;
+}
+
+#type {
+    padding: 9px 0.75rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white; 
 }
 
 .wrapper {

@@ -28,33 +28,15 @@ document.getElementById("kids").addEventListener('click',function(e){
     gentsCuts.classList.add('visually-hidden');
     ladiesCuts.classList.add('visually-hidden');
     kidsCuts.classList.remove('visually-hidden');   
-});    
+});  
 
+let elements = document.getElementsByClassName('dropdown-item');
 
-
-
-
-
-
-
-
-// function choiceGents(){
-//     choice.innerText = "Gents";
-//     console.log(choice.innerText);
-// };
-
-// function choiceLadies(){
-//     choice.innerText = "Ladies";    
-//     console.log(choice.innerText);
-//     ladiesCuts.classList.remove('visually-hidden');
-// };
-
-// function choiceKids(){
-//     choice.innerText = "Kids";
-//     console.log(choice.innerText);
-//     kidsCuts.classList.remove('visually-hidden');
-// };
-
+Array.from(elements).forEach((element) => {
+    element.addEventListener('click', (event) => {
+        console.log(event.target.innerText);
+  });
+});
 
 function submitForm(){
     console.log('anyad');

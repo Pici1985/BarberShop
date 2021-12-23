@@ -21,7 +21,7 @@ font-family: 'Poppins', sans-serif;
     color: #fff;
 }
 
-ul {
+.navbar ul {
     width: 100vw;
     list-style-type: none;
     margin: 0;
@@ -31,25 +31,25 @@ ul {
     color: #633d3d;
     font-size: large;
     font-weight: 600;
+
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
   
-  li {
-    display: inline;
-    float: right;
-  }
-  
-  li a {
+  .navbar li a {
     display: block;
     color: #633d3d;
     padding: 1rem 0.8rem;
     text-decoration: none;
   }
   
-  li:first-child {
+  .navbar li:last-child {
     padding-right: 3rem;
   }
   
-  li a:hover {
+  .navbar li a:hover {
     background-color: #555;
     color: white;
   }

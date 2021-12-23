@@ -1,6 +1,8 @@
 /* // X-Small devices (portrait phones, less than 576px) */
 /* // No media query for `xs` since this is the default in Bootstrap */
 
+
+/* general styles */
 *{
     margin: 0;
     padding: 0;
@@ -16,8 +18,11 @@ html, body {
     color: white!important;
 }
 
+/* navbar styles */
+
 .navbar {
     background:rgb(185, 185, 185);
+    padding: 0px;
 }
 
 #togglerbutton{
@@ -36,16 +41,20 @@ html, body {
     justify-content: center;
 }
 
-
 .nav-item a{
+    height: 66px;
     color: #633D3D;
     font-weight: 500;
     font-size: 1.25rem;
+    padding-left: 10px!important;
 }
 
 .nav-item a:hover{
     color: white!important;
+    background-color: #633D3D;
 }
+
+/* content styles */
 
 .cover {
     background-image: url("../assets/images/csaje.jpg");

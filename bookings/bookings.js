@@ -1,4 +1,5 @@
 let gender = ""; 
+let elements = "";
 
 let choice = document.getElementById('choice');
 let gentsCuts = document.getElementById('gentsCuts');
@@ -30,13 +31,16 @@ document.getElementById("kids").addEventListener('click',function(e){
     kidsCuts.classList.remove('visually-hidden');   
 });  
 
-let elements = document.getElementsByClassName('dropdown-item');
+elements = document.getElementsByClassName('hairstyle');
 
 Array.from(elements).forEach((element) => {
     element.addEventListener('click', (event) => {
         console.log(event.target.innerText);
+        document.querySelector('.hairStyleChoice').innerText = event.target.innerText;
   });
 });
+
+
 
 function submitForm(){
     console.log('anyad');

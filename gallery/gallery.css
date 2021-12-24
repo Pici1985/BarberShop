@@ -5,17 +5,22 @@
 .container {
     display: flex;
     width: 70vw;
+    margin: 50px 150px;
+    
 }
 .image-gallery{
+    
     background-size: cover;
-    height: 100vh;
+    height: 80vh;
     border-radius: 30px;
     cursor: pointer;
     margin: 8px;
-    flex: 0.5;
+    flex: 1;
     background-repeat: no-repeat;
+    transition: flex 1s ease-in;
     
 }
+
 .image-gallery.large {
-    flex:5;
+    flex:3;
 }

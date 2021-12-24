@@ -334,98 +334,102 @@
             <h1 class="mt-5">Booking Form:</h1>
         </div>
         
-        <form action="submit" class="mb-5">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="name" placeholder="name@example.com">
+        <form class="mb-5" id="inputForm">
+            <div class="form-floating mb-3 shadow ">
+                <input type="text" class="form-control" id="name" placeholder="name@example.com" >
                 <label for="name">Your Name:</label>
-              </div>
-              <div class="form-floating  mb-3">
+            </div>
+            <div class="form-floating  mb-3 shadow ">
                 <input type="email" class="form-control" id="email" placeholder="Email">
                 <label for="email">Your Email address:</label>
-              </div>    
-              <div class="form-floating  mb-3">
+            </div>    
+            <div class="form-floating  mb-3 shadow ">
                 <input type="text" class="form-control" id="phone" placeholder="Phone">
                 <label for="phone">Phone Number:</label>
-              </div>    
-              <div class="form-floating  mb-3">
+            </div>    
+            <div class="form-floating  mb-3 shadow ">
                 <input type="text" class="form-control" id="date" placeholder="Date">
                 <label for="date">Appointment Date:</label>
-              </div>    
-              <div class="form-floating  mb-3">
+            </div>    
+            <div class="form-floating  mb-3 shadow ">
                 <input type="text" class="form-control" id="time" placeholder="Time">
                 <label for="time">Appointment Time:</label>
-              </div>    
+            </div>    
 
-
-              <div class="form-floating  mb-3 d-xs-grid d-sm-flex justify-content-between align-items-center" id="type">
-                <span>Appointment type:</span>
-                <div class="btn-group">
-                    <button class="btn btn-outline-dark dropdown-toggle"  data-bs-toggle="dropdown" type="button">
-                        Haircut for:
-                    </button>
-                <ul class="dropdown-menu" >
-                    <li><span class="dropdown-item" id="gents" >Gents</span></li>
-                    <li><span class="dropdown-item" id="ladies" >Ladies</span></li>
-                    <li><span class="dropdown-item" id="kids" >Kids</span></li>
-                </ul>
-            </div>
-            <span id="choice"></span>
-                    
-            <span id="spacer"></span>
-                <div class="btn-group visually-hidden" id="gentsCuts" >
-                    <button class="btn btn-outline-dark dropdown-toggle"  data-bs-toggle="dropdown" type="button">
-                        Gents Cuts:
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><span class="dropdown-item hairstyle">Dry Cut</span></li>
-                        <li><span class="dropdown-item hairstyle">Wet Cut</span></li>
-                        <li><span class="dropdown-item hairstyle">Grader Cut</span></li>  
-                        <li><span class="dropdown-item hairstyle">Cut and Style</li>  
-                        <li><span class="dropdown-item hairstyle">Restyle</span></li>  
-                        <li><span class="dropdown-item hairstyle">Restyle - Curly</span></li>  
-                        <li><span class="dropdown-item hairstyle">Wash - Blowdry</span></li>  
-                        </ul>
+            <div class="form-floating mb-3 shadow " id="type">
+                <div class="d-flex justify-content-start">
+                    <span>Appointment type:</span>
                 </div>
-            
-            
-            
-                <div class="btn-group visually-hidden" id="ladiesCuts" >
-                    <button class="btn btn-outline-dark dropdown-toggle"  data-bs-toggle="dropdown" type="button">
-                        Ladies Cuts:
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><span class="dropdown-item hairstyle">Dry Cut</span></li>
-                        <li><span class="dropdown-item hairstyle">Wet Cut</span></li>
-                        <li><span class="dropdown-item hairstyle">Fringe Cut</span></li>  
-                        <li><span class="dropdown-item hairstyle">Cut and Style</li>  
-                        <li><span class="dropdown-item hairstyle">Curly - Blowdry</span></li>  
-                        <li><span class="dropdown-item hairstyle">Wash - Blowdry</span></li>  
-                        <li><span class="dropdown-item hairstyle">Color - Short</span></li>  
-                        <li><span class="dropdown-item hairstyle">Color - Medium</span></li>  
-                        <li><span class="dropdown-item hairstyle">Color - Long</span></li>  
-                    </ul>
-                </div>
-            
-            
-            
-                <div class="btn-group visually-hidden" id="kidsCuts" >
-                    <button class="btn btn-outline-dark dropdown-toggle"  data-bs-toggle="dropdown" type="button">
-                        Kids Cuts:
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><span class="dropdown-item hairstyle">Childs Cut</span></li>
-                        <li><span class="dropdown-item hairstyle">Fishtail</span></li>
-                        <li><span class="dropdown-item hairstyle">Bunches</span></li>  
-                        <li><span class="dropdown-item hairstyle">Ponytail</li>  
+                
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group mt-2 mb-2">
+                        <button class="btn btn-outline-dark btn-sm dropdown-toggle"  data-bs-toggle="dropdown" type="button">
+                            Haircut for:
+                        </button>
+                        <ul class="dropdown-menu" >
+                            <li><span class="dropdown-item" id="gents" >Gents</span></li>
+                            <li><span class="dropdown-item" id="ladies" >Ladies</span></li>
+                            <li><span class="dropdown-item" id="kids" >Kids</span></li>
                         </ul>
                     </div>
-                    <span class="hairStyleChoice"></span>
+                
+                    <span id="choice"></span>
+                            
+                    <span id="spacer"></span>
+
+                    <div class="btn-group mt-2 mb-2 visually-hidden" id="gentsCuts" >
+                        <button class="btn btn-outline-dark btn-sm dropdown-toggle"  data-bs-toggle="dropdown" type="button">
+                            Gents Cuts:
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><span class="dropdown-item hairstyle">Dry Cut</span></li>
+                            <li><span class="dropdown-item hairstyle">Wet Cut</span></li>
+                            <li><span class="dropdown-item hairstyle">Grader Cut</span></li>  
+                            <li><span class="dropdown-item hairstyle">Cut and Style</li>  
+                            <li><span class="dropdown-item hairstyle">Restyle</span></li>  
+                            <li><span class="dropdown-item hairstyle">Restyle - Curly</span></li>  
+                            <li><span class="dropdown-item hairstyle">Wash - Blowdry</span></li>  
+                        </ul>
+                    </div>
+                    
+                    <div class="btn-group mt-2 mb-2 visually-hidden" id="ladiesCuts" >
+                        <button class="btn btn-outline-dark btn-sm dropdown-toggle"  data-bs-toggle="dropdown" type="button">
+                            Ladies Cuts:
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><span class="dropdown-item hairstyle">Dry Cut</span></li>
+                            <li><span class="dropdown-item hairstyle">Wet Cut</span></li>
+                            <li><span class="dropdown-item hairstyle">Fringe Cut</span></li>  
+                            <li><span class="dropdown-item hairstyle">Cut and Style</li>  
+                            <li><span class="dropdown-item hairstyle">Curly - Blowdry</span></li>  
+                            <li><span class="dropdown-item hairstyle">Wash - Blowdry</span></li>  
+                            <li><span class="dropdown-item hairstyle">Color - Short</span></li>  
+                            <li><span class="dropdown-item hairstyle">Color - Medium</span></li>  
+                            <li><span class="dropdown-item hairstyle">Color - Long</span></li>  
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="btn-group mt-2 mb-2 visually-hidden" id="kidsCuts" >
+                        <button class="btn btn-outline-dark  btn-sm dropdown-toggle"  data-bs-toggle="dropdown" type="button">
+                            Kids Cuts:
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><span class="dropdown-item hairstyle">Childs Cut</span></li>
+                            <li><span class="dropdown-item hairstyle">Fishtail</span></li>
+                            <li><span class="dropdown-item hairstyle">Bunches</span></li>  
+                            <li><span class="dropdown-item hairstyle">Ponytail</li>  
+                        </ul>
+                    </div>
+                    <span id="hairStyleChoice"></span>
                 </div>
+            </div>
             
 
-            <div class="d-grid gap-2">
+            <div class="d-grid gap-2 shadow ">
                 <button class="btn btn-dark p-3" type="button" onClick="submitForm();">Send booking Request</button>
-            </div>   
+            </div>       
         </form>
     </div>
 

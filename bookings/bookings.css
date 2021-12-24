@@ -136,18 +136,23 @@ html, body {
 }
 
 #spacer{
-    width: 135px; 
-   
+    width: 60px;
+    font-size: 0.75rem; 
+    font-weight: 900; 
+    
 }
 
 #choice {
-    width: 135px;    
-     
+    width: 60px;    
+    font-size: 0.75rem; 
+    font-weight: 900; 
+    
 }
 
-.hairStyleChoice{
-    width: 135px;
-   
+#hairStyleChoice{
+    width: 60px;
+    font-size: 0.75rem; 
+    font-weight: 900; 
 }
 
 .wrapper {
@@ -180,7 +185,23 @@ footer span {
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
+    #spacer{
+        width: 135px;
+        font-size: 1rem;
+        font-weight: 900;       
+    }
     
+    #choice {
+        width: 135px;    
+        font-size: 1rem;
+        font-weight: 900;      
+    }
+    
+    #hairStyleChoice{
+        width: 135px;
+        font-size: 1rem;
+        font-weight: 900;       
+    }
 }
 
 /* // Medium devices (tablets, 768px and up) */

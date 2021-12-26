@@ -62,6 +62,7 @@ document.getElementById("kids").addEventListener('click',function(e){
     spacer.remove();   
 });  
 
+// eventlistener for hairstyle dropdown
 elements = document.getElementsByClassName('hairstyle');
 
 Array.from(elements).forEach((element) => {
@@ -72,24 +73,20 @@ Array.from(elements).forEach((element) => {
     });
 });
 
-// field validations 
-
-
-
 
 // functions needed for submit
 
-// form validator function
+// date setter function
 (function(){
     let today = new Date();
     let dd = today.getDate();
     let mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
     let yyyy = today.getFullYear();
     if(dd<10){
-      dd='0'+dd
+        dd='0'+dd
     } 
     if(mm<10){
-      mm='0'+mm
+        mm='0'+mm
     } 
     
     today = yyyy+'-'+mm+'-'+dd;
@@ -97,6 +94,7 @@ Array.from(elements).forEach((element) => {
     // console.log('datesetter IIFE working.');
 })();
 
+// form validator function
 (function() {
     'use strict'
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -115,7 +113,7 @@ Array.from(elements).forEach((element) => {
       })
   })();
 
-
+// submits the form
 function submitForm(){
     let data = collectData();
     alert("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
@@ -125,6 +123,7 @@ function submitForm(){
     // event.preventDefault();
 } 
 
+// gets data values out of form
 function collectData(){
     let name = document.getElementById('name').value;    
     let email = document.getElementById('email').value;    
@@ -146,6 +145,7 @@ function collectData(){
     return Booking;
 }
 
+// checks is dropdowns have values at all
 function checkDropdownValues(){
     console.log('check dropdown');
     if(choice.value === ""){
@@ -161,6 +161,7 @@ function checkDropdownValues(){
     }
 }
 
+// resets the form after submit 
 function resetForm(){
     // document.getElementById('inputForm').reset();
     choice.innerText = "";

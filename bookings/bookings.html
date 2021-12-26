@@ -334,29 +334,44 @@
             <h1 class="mt-5">Booking Form:</h1>
         </div>
         
-        <form class="mb-5" id="inputForm">
+        <form class="mb-5 needs-validation" novalidate id="inputForm">
             <div class="form-floating mb-3 shadow ">
-                <input type="text" class="form-control" id="name" placeholder="name@example.com" >
+                <input type="text" class="form-control" id="name" placeholder="name@example.com" required>
                 <label for="name">Your Name:</label>
+                <div class="invalid-feedback">
+                    Please enter a name! 
+                </div>
             </div>
             <div class="form-floating  mb-3 shadow ">
-                <input type="email" class="form-control" id="email" placeholder="Email">
+                <input type="email" class="form-control" id="email" placeholder="Email" required>
                 <label for="email">Your Email address:</label>
+                <div class="invalid-feedback">
+                    Please enter a valid email address!! 
+                </div>
             </div>    
             <div class="form-floating  mb-3 shadow ">
-                <input type="text" class="form-control" id="phone" placeholder="Phone">
+                <input type="number" class="form-control" id="phone" placeholder="Phone" required>
                 <label for="phone">Phone Number:</label>
+                <div class="invalid-feedback">
+                    Please enter a valid phone number!! 
+                </div>
             </div>    
             <div class="form-floating  mb-3 shadow ">
-                <input type="text" class="form-control" id="date" placeholder="Date">
+                <input type="date" min="" class="form-control" id="date" placeholder="Date" required>
                 <label for="date">Appointment Date:</label>
+                <div class="invalid-feedback">
+                    Please enter a valid date!!
+                </div>
             </div>    
             <div class="form-floating  mb-3 shadow ">
-                <input type="text" class="form-control" id="time" placeholder="Time">
+                <input type="time" class="form-control" id="time" placeholder="Time" required>
                 <label for="time">Appointment Time:</label>
+                <div class="invalid-feedback">
+                    Please enter a valid time!!
+                </div>
             </div>    
 
-            <div class="form-floating mb-3 shadow " id="type">
+            <div class="form-floating shadow " id="type">
                 <div class="d-flex justify-content-start">
                     <span>Appointment type:</span>
                 </div>
@@ -373,7 +388,7 @@
                         </ul>
                     </div>
                 
-                    <span id="choice"></span>
+                    <input type="text" id="choice" required>
                             
                     <span id="spacer"></span>
 
@@ -422,13 +437,21 @@
                             <li><span class="dropdown-item hairstyle">Ponytail</li>  
                         </ul>
                     </div>
-                    <span id="hairStyleChoice"></span>
+                    <input type="text" id="hairStyleChoice" required>
+                </div>
+            </div>
+            <div class="errorMessages visually-hidden d-flex justify-content-center" id="errorMessages">
+                <div class="visually-hidden" id="genderFeedback">
+                    Please select Gender!!
+                </div>
+                <div class="visually-hidden" id="hairStyleFeedback">
+                    Please select Hair Style!!
                 </div>
             </div>
             
 
-            <div class="d-grid gap-2 shadow ">
-                <button class="btn btn-dark p-3" type="button" onClick="submitForm();">Send booking Request</button>
+            <div class="d-grid gap-2 shadow mt-3">
+                <button class="btn btn-dark p-3" onClick="submitForm();" type="submit">Send booking Request</button>
             </div>       
         </form>
     </div>

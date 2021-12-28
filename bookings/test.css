@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100px;
+}
+
+.testfooterdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: pink;
+    height: 100px;
+}
+
+.testfooterdiv p {
+    font-size: larger;
+    font-weight: 600;
+    padding: 15px;
+    margin: 0px;
+}

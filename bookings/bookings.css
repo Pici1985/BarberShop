@@ -187,16 +187,16 @@ html, body {
 
 }
 
+.testframe{
+    height: 66px;
+    width: 100%;
+    margin-bottom: -6px; /* erre miert van szukseg??? */
+}
+
 .push {
     height: 66px;
 }
 
-.testframe{
-    height: 100px;
-    width: 100%;
-    position: relative;
-    z-index: 3;
-}
 
 footer{
     display: flex;

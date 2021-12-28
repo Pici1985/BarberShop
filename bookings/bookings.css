@@ -121,11 +121,19 @@ html, body {
     text-shadow: 5px 5px 5px grey;
 }
 
-.form {
+/* .form {
     width: 100%;
-}
+} */
 
 /* appointment type field styles*/ 
+#inputForm{
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    /* position: relative;
+    z-index: 1;
+    backdrop-filter: blur(5px); */
+}
 
 #type {
     padding: 9px 0.75rem;
@@ -187,11 +195,15 @@ html, body {
 
 }
 
+/* appointment type field styles end here */
+
 .testframe{
     height: 66px;
     width: 100%;
     margin-bottom: -6px; /* erre miert van szukseg??? */
 }
+
+/* needed fro sticky footer*/
 
 .push {
     height: 66px;

@@ -25,6 +25,8 @@ body{
 }
 .image-gallery{    
     background-size: cover;
+    background-color: rgba(41, 35, 35, 0.333); 
+    background-blend-mode: darken;
     height: 75vh;
     border-radius: 30px;
     cursor: pointer;
@@ -32,10 +34,13 @@ body{
     flex: 1;
     background-repeat: no-repeat;
     transition: flex 1s ease-in;
+    
+
 }
 
 .image-gallery.large {
     flex:3;
+    background-color: #ffffff;
 }
 h1{
     font-family: 'Poppins', sans-serif;
@@ -43,3 +48,4 @@ h1{
         font-size: 3rem;
         color: #fff;
     }
+ 

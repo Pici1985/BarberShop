@@ -116,7 +116,7 @@ Array.from(elements).forEach((element) => {
 // submits the form
 function submitForm(){
     let data = collectData();
-    alert("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
+    console.log("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
     // this is where we can send the HTTP request with the JSON data from
     checkDropdownValues();
     resetForm();
@@ -176,6 +176,11 @@ function resetForm(){
         kidsCuts.classList.add('visually-hidden');   
     }
 }
+
+const animatedbtn = document.querySelector("[data-btn]")
+animatedbtn.addEventListener("click", () => {
+    animatedbtn.classList.add("animating");    
+})
 
     
 

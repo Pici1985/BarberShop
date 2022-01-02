@@ -4,6 +4,7 @@ body{
     box-sizing: border-box;
     height: 80vh;
     background-color: #8b5b5b;
+    
 }
 /*
 .headerframe {
@@ -34,18 +35,35 @@ body{
     flex: 1;
     background-repeat: no-repeat;
     transition: flex 1s ease-in;
-    
+    color: #9e6c6c;
+    position: relative;
 
 }
 
 .image-gallery.large {
-    flex:3;
-    background-color: #ffffff;
+    flex:4;
+    background-color: whitesmoke;
 }
 h1{
     font-family: 'Poppins', sans-serif;
         text-align: center;
         font-size: 3rem;
-        color: #fff;
+        color: white;
     }
- 
+.image-gallery h2{
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    margin: 0;
+    opacity: 0;
+}
+.image-gallery.large h2{
+    opacity: 1;
+    transition: opacity 0.8s ease-in; 
+}
+@media(max-width: 480px){
+    .container{
+        width: 100vw;
+    } 
+ }

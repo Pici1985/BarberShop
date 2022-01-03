@@ -116,9 +116,9 @@ Array.from(elements).forEach((element) => {
 // submits the form
 function submitForm(){
     let data = collectData();
-    checkDropdownValues();
+    console.log("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
     // this is where we can send the HTTP request with the JSON data from
-    alert("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
+    checkDropdownValues();
     resetForm();
     // event.preventDefault();
 } 
@@ -177,10 +177,10 @@ function resetForm(){
     }
 }
 
-// const animatedbtn = document.querySelector("[data-btn]")
-// animatedbtn.addEventListener("click", () => {
-//     animatedbtn.classList.add("animating");    
-// })
+const animatedbtn = document.querySelector("[data-btn]")
+animatedbtn.addEventListener("click", () => {
+    animatedbtn.classList.add("animating");    
+})
 
     
 

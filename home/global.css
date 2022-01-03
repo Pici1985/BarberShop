@@ -9,7 +9,7 @@
    }
    
    body {
-       height: 100vh;
+       /* height: auto; */
        background-image: linear-gradient(#fff, #8b5b5b);
        background-repeat: no-repeat;
        display: flex;
@@ -17,11 +17,11 @@
    }
    
    p {
-   font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
    }
    
    h1{
-   font-family: 'Poppins', sans-serif;
+       font-family: 'Poppins', sans-serif;
        text-align: center;
        font-size: 5rem;
        color: #fff;
@@ -87,6 +87,7 @@
        border: solid 2px black;
        border-radius: 50%;
      }
+
      my-footer {
       height: 66px;
       background-color: #c4c4c4;
@@ -98,5 +99,4 @@
       font-weight: 600;
       color: #633d3d;
       margin-top:auto;
-
   }

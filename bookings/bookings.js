@@ -113,32 +113,23 @@ Array.from(elements).forEach((element) => {
       })
   })();
 
-// submits the form
-function submitForm(){
-    let data = collectData();
-    checkDropdownValues();
-    // this is where we can send the HTTP request with the JSON data from
-    alert("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
-    resetForm();
-    // event.preventDefault();
-} 
-
-// gets data values out of form
-function collectData(){
-    let name = document.getElementById('name').value;    
-    let email = document.getElementById('email').value;    
-    let phone = document.getElementById('phone').value;    
-    let date = document.getElementById('date').value;    
-    let time = document.getElementById('time').value;
-    let gender = document.getElementById('choice').value;
-    let style = document.getElementById('hairStyleChoice').value; 
-    
-    let Booking = {
-        name : name,
-        email : email,
-        phone : phone,
-        date : date,
-        time : time,
+  
+  // gets data values out of form
+  function collectData(){
+      let name = document.getElementById('name').value;    
+      let email = document.getElementById('email').value;    
+      let phone = document.getElementById('phone').value;    
+      let date = document.getElementById('date').value;    
+      let time = document.getElementById('time').value;
+      let gender = document.getElementById('choice').value;
+      let style = document.getElementById('hairStyleChoice').value; 
+      
+      let Booking = {
+          name : name,
+          email : email,
+          phone : phone,
+          date : date,
+          time : time,
         gender : gender,
         style : style 
     }
@@ -153,7 +144,7 @@ function checkDropdownValues(){
         document.getElementById("errorMessages").classList.remove('visually-hidden');
         document.getElementById("type").style.border = "1px solid #dc3545";
     }
-
+    
     if(hairStyleChoice.value === ""){
         document.getElementById("hairStyleFeedback").classList.remove('visually-hidden');
         document.getElementById("errorMessages").classList.remove('visually-hidden');
@@ -163,7 +154,8 @@ function checkDropdownValues(){
 
 // resets the form after submit 
 function resetForm(){
-    // document.getElementById('inputForm').reset();
+    document.getElementById('inputForm').classList.remove('was-validated');
+    console.log('Resetform called');
     choice.innerText = "";
     hairStyleChoice.innerText = "";
     if(gentsCuts){
@@ -177,10 +169,23 @@ function resetForm(){
     }
 }
 
-// const animatedbtn = document.querySelector("[data-btn]")
-// animatedbtn.addEventListener("click", () => {
-//     animatedbtn.classList.add("animating");    
-// })
+// submits the form
+function submitForm(){
+    let data = collectData();
+    checkDropdownValues();
+    // this is where we can send the HTTP request with the JSON data from
+    console.log("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
+    // resetForm();
+    // setTimeout(() => {location.reload()}, 3000);
+    setTimeout(resetForm, 3000);
+    // e.preventDefault();
+} 
 
-    
+//js for the animated button
+const animatedbtn = document.querySelector("[data-btn]")
+animatedbtn.addEventListener("click", () => {
+    animatedbtn.classList.add("animating");
+})
+
+
 

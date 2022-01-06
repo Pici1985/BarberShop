@@ -26,39 +26,43 @@
             <h1 class="mt-5">Booking Form:</h1>
         </div>
         
-        <form class="mb-5 needs-validation" novalidate id="inputForm">
+        <!-- <form class="mb-5 needs-validation" novalidate  id="inputForm"> -->
+        <form class="mb-5 needs-validation"  id="inputForm">
             <div class="form-floating mb-3 shadow ">
-                <input type="text" class="form-control" id="name" placeholder="name@example.com" required>
+                <input type="text" class="form-control" id="name" placeholder="name@example.com" >
                 <label for="name">Your Name:</label>
-                <div class="invalid-feedback">
+                <div class="invalid-feedback" id="nameError">
                     Please enter a name! 
                 </div>
             </div>
             <div class="form-floating  mb-3 shadow ">
-                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                <input type="email" class="form-control" id="email" placeholder="Email" >
                 <label for="email">Your Email address:</label>
-                <div class="invalid-feedback">
-                    Please enter a valid email address!! 
+                <div class="invalid-feedback" id="emailEmptyError">
+                    Email field cannot be empty!! 
+                </div>
+                <div class="invalid-feedback" id="emailNoEmailError">
+                    This is not a valid email address!!
                 </div>
             </div>    
             <div class="form-floating  mb-3 shadow ">
-                <input type="number" class="form-control" id="phone" placeholder="Phone" required>
+                <input type="number" class="form-control" id="phone" placeholder="Phone" >
                 <label for="phone">Phone Number:</label>
-                <div class="invalid-feedback">
-                    Please enter a valid phone number!! 
+                <div class="invalid-feedback" id="phoneError">
+                    Please enter a phone number!! 
                 </div>
             </div>    
             <div class="form-floating  mb-3 shadow ">
-                <input type="date" min="" class="form-control" id="date" placeholder="Date" required>
+                <input type="date" min="" class="form-control" id="date" placeholder="Date" >
                 <label for="date">Appointment Date:</label>
-                <div class="invalid-feedback">
+                <div class="invalid-feedback" id="dateError">
                     Please enter a valid date!!
                 </div>
             </div>    
             <div class="form-floating  mb-3 shadow ">
-                <input type="time" class="form-control" id="time" placeholder="Time" required>
+                <input type="time" class="form-control" id="time" placeholder="Time" >
                 <label for="time">Appointment Time:</label>
-                <div class="invalid-feedback">
+                <div class="invalid-feedback" id="timeError">
                     Please enter a valid time!!
                 </div>
             </div>    
@@ -80,7 +84,7 @@
                         </ul>
                     </div>
                 
-                    <input type="text" id="choice" required>
+                    <input type="text" id="choice" >
                             
                     <span id="spacer"></span>
 
@@ -129,7 +133,7 @@
                             <li><span class="dropdown-item hairstyle">Ponytail</li>  
                         </ul>
                     </div>
-                    <input type="text" id="hairStyleChoice" required>
+                    <input type="text" id="hairStyleChoice" >
                 </div>
             </div>
             <div class="errorMessages visually-hidden d-flex justify-content-center" id="errorMessages">
@@ -142,13 +146,15 @@
             </div>
             
             <!-- simple button -->
-            <div class="d-grid gap-2 shadow mt-3">
+            <!-- <div class="d-grid gap-2 shadow mt-3">
                 <button class="btn btn-dark p-3" onClick="submitForm();" type="submit">Send booking Request</button>
-            </div>
+                <button class="btn btn-dark p-3" onClick="submitForm();" >Send booking Request</button>
+            </div> -->
 
             <!-- animated button -->
             <div class="button-holder mt-3">
-                <button id="submitbutton" class="submitbutton" type="submit" data-btn>Submit</button>
+                <!-- <button id="submitbutton" class="submitbutton" type="submit" data-btn>Submit</button> -->
+                <button id="submitbutton" class="submitbutton" data-btn>Submit</button>
                 <div class="checkmark-container">
                   <svg x="0px" y="0px" fill="none" class="checkmark-svg" viewBox="0 0 25 30">
                    <path d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2"/>

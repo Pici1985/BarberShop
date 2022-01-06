@@ -90,6 +90,9 @@ p{
     padding: 5px 15px;
 }
 
+.success {
+  border: 1px solid green; 
+}
 /* Animted button css only starts*/
 
 .button-holder{

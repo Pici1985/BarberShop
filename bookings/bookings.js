@@ -70,6 +70,7 @@ Array.from(elements).forEach((element) => {
         // console.log(event.target.innerText);
         document.querySelector('#hairStyleChoice').value = event.target.innerText;
         document.getElementById("type").style.border = "1px solid green";
+        document.getElementById("type").classList.add('checked');
     });
 });
 
@@ -152,6 +153,69 @@ function checkDropdownValues(){
     }
 }
 
+// check namefield values 
+function checkNameValue(){
+    let nameError = document.getElementById('nameError')
+    let nameField = document.getElementById('name');
+    if(nameField.value === ""){
+        nameError.style.display = 'block';
+    } else {
+       nameField.classList.add('success');
+       nameField.classList.add('checked');
+    }   
+}
+// check emailfield values 
+function checkEmailValue(){
+    let emailEmptyError = document.getElementById('emailEmptyError');
+    let emailNoEmailError = document.getElementById('emailNoEmailError');
+    let emailField = document.getElementById('email');
+    let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(emailField.value === ""){
+        emailEmptyError.style.display = 'block';
+    } else if (!emailField.value.match(mailformat)){
+        // console.log(emailField.value);
+        emailNoEmailError.style.display ='block';
+    }else {
+       emailField.classList.add('success');
+       emailField.classList.add('checked');
+    }   
+}
+// check phonenumber value 
+function checkPhoneValue(){
+    let phoneError = document.getElementById('phoneError')
+    let phoneField = document.getElementById('phone');
+    if(phoneField.value === ""){
+        phoneError.style.display = 'block';
+    } else {
+       phoneField.classList.add('success');
+       phoneField.classList.add('checked');
+    }      
+}
+
+// check date value 
+function checkDateValue(){
+    let dateError = document.getElementById('dateError')
+    let dateField = document.getElementById('date');
+    if(dateField.value === ""){
+        dateError.style.display = 'block';
+    } else {
+       dateField.classList.add('success');
+       dateField.classList.add('checked');
+    }      
+}
+
+// check time value 
+function checkTimeValue(){
+    let timeError = document.getElementById('timeError')
+    let timeField = document.getElementById('time');
+    if(timeField.value === ""){
+        timeError.style.display = 'block';
+    } else {
+       timeField.classList.add('success');
+       timeField.classList.add('checked');
+    }      
+}
+
 // resets the form after submit 
 function resetForm(){
     document.getElementById('inputForm').classList.remove('was-validated');
@@ -172,7 +236,6 @@ function resetForm(){
 // submits the form
 function submitForm(){
     let data = collectData();
-    checkDropdownValues();
     // this is where we can send the HTTP request with the JSON data from
     console.log("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
     // resetForm();
@@ -181,11 +244,51 @@ function submitForm(){
     // e.preventDefault();
 } 
 
+// check values of all the input fields
+
+function checkFieldValues(){
+    checkNameValue();
+    checkEmailValue();
+    checkPhoneValue();
+    checkDateValue();
+    checkTimeValue();
+};
+
+// formvalidator
+
+function formValidator(){
+    let nameField = document.getElementById('name');
+    let emailField = document.getElementById('email');    
+    let phoneField = document.getElementById('phone');
+    let dateField = document.getElementById('date');
+    let timeField = document.getElementById('time');
+    let type = document.getElementById("type");
+    if(
+        nameField.classList.contains('checked') &&
+        emailField.classList.contains('checked') &&
+        phoneField.classList.contains('checked') &&
+        dateField.classList.contains('checked') &&
+        timeField.classList.contains('checked') &&
+        type.classList.contains('checked')
+    ){
+        document.getElementById('inputForm').classList.add('everything-valid');
+    }   
+}
+
 //js for the animated button
 const animatedbtn = document.querySelector("[data-btn]")
-animatedbtn.addEventListener("click", () => {
-    animatedbtn.classList.add("animating");
-})
+animatedbtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    checkDropdownValues();
+    checkFieldValues();
+    formValidator();
+    let inputForm = document.getElementById('inputForm');    
+    if(inputForm.classList.contains('everything-valid')){
+        animatedbtn.classList.add("animating");
+        let data = collectData();
+        console.log("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
+    }
+});
 
 
 

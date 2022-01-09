@@ -145,22 +145,49 @@
                 </div>
             </div>
             
-            <!-- simple button -->
-            <!-- <div class="d-grid gap-2 shadow mt-3">
-                <button class="btn btn-dark p-3" onClick="submitForm();" type="submit">Send booking Request</button>
-                <button class="btn btn-dark p-3" onClick="submitForm();" >Send booking Request</button>
-            </div> -->
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    ...
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Confirm</button>
+                        <button type="button" class="btn btn-danger">Cancel</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Button trigger modal -->
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Launch static backdrop modal
+            </button> -->
+
+            <!-- simple button --> 
+            <div class="d-grid gap-2 shadow mt-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <!-- <button class="btn btn-dark p-3" onClick="submitForm();" type="submit">Send booking Request</button> -->
+                <button type="button"  class="btn btn-dark p-3"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Send booking Request
+                </button>
+            </div>
 
             <!-- animated button -->
-            <div class="button-holder mt-3">
-                <!-- <button id="submitbutton" class="submitbutton" type="submit" data-btn>Submit</button> -->
-                <button id="submitbutton" class="submitbutton" data-btn>Submit</button>
+            <!-- <div class="button-holder mt-3">
+                <button id="submitbutton" class="submitbutton" data-btn data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Submit
+                </button>
                 <div class="checkmark-container">
                   <svg x="0px" y="0px" fill="none" class="checkmark-svg" viewBox="0 0 25 30">
                    <path d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2"/>
                  </svg>
                 </div>
-            </div>
+            </div> -->
 
         </form>        
     </div>    

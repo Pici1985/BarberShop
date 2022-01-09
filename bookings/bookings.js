@@ -2,12 +2,39 @@
 let gender = ""; 
 let elements = "";
 
+// variables for dropdown field
+
 let hairStyleChoice = document.getElementById('hairStyleChoice');
 let choice = document.getElementById('choice');
 let gentsCuts = document.getElementById('gentsCuts');
 let ladiesCuts = document.getElementById('ladiesCuts');
 let kidsCuts = document.getElementById('kidsCuts');
 let spacer = document.getElementById('spacer');
+
+// varibles for inputfields
+// varibles for inputfields
+// varibles for inputfields
+
+let nameField = document.getElementById('name');
+let nameError = document.getElementById('nameError')
+
+let emailField = document.getElementById('email');
+let emailEmptyError = document.getElementById('emailEmptyError');
+let emailNoEmailError = document.getElementById('emailNoEmailError');
+
+let phoneField = document.getElementById('phone');
+let phoneError = document.getElementById('phoneError')
+
+let dateField = document.getElementById('date');
+let dateError = document.getElementById('dateError');
+
+let timeField = document.getElementById('time');
+let timeError = document.getElementById('timeError');
+
+
+
+
+
 
 
 // functions needed for dropdown buttons
@@ -69,7 +96,7 @@ Array.from(elements).forEach((element) => {
     element.addEventListener('click', (event) => {
         // console.log(event.target.innerText);
         document.querySelector('#hairStyleChoice').value = event.target.innerText;
-        document.getElementById("type").style.border = "1px solid green";
+        document.getElementById("type").style.border = "2px solid green";
         document.getElementById("type").classList.add('checked');
     });
 });
@@ -94,27 +121,7 @@ Array.from(elements).forEach((element) => {
     document.getElementById("date").setAttribute("min", today);
     // console.log('datesetter IIFE working.');
 })();
-
-// form validator function
-(function() {
-    'use strict'
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-  
-          form.classList.add('was-validated')
-        }, false)
-      })
-  })();
-
-  
+ 
   // gets data values out of form
   function collectData(){
       let name = document.getElementById('name').value;    
@@ -153,49 +160,42 @@ function checkDropdownValues(){
     }
 }
 
+
 // check namefield values 
-function checkNameValue(){
-    let nameError = document.getElementById('nameError')
-    let nameField = document.getElementById('name');
-    if(nameField.value === ""){
-        nameError.style.display = 'block';
-    } else {
-       nameField.classList.add('success');
-       nameField.classList.add('checked');
-    }   
-}
+// function checkNameValue(){
+//     if(nameField.value === ""){
+//         nameError.style.display = 'block';
+//     } else {
+//        nameField.classList.add('success');
+//        nameField.classList.add('checked');
+//     }   
+// }
+
 // check emailfield values 
-function checkEmailValue(){
-    let emailEmptyError = document.getElementById('emailEmptyError');
-    let emailNoEmailError = document.getElementById('emailNoEmailError');
-    let emailField = document.getElementById('email');
-    let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(emailField.value === ""){
-        emailEmptyError.style.display = 'block';
-    } else if (!emailField.value.match(mailformat)){
-        // console.log(emailField.value);
-        emailNoEmailError.style.display ='block';
-    }else {
-       emailField.classList.add('success');
-       emailField.classList.add('checked');
-    }   
-}
+// function checkEmailValue(){
+//     let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//     if(emailField.value === ""){
+//         emailEmptyError.style.display = 'block';
+//     } else if (!emailField.value.match(mailformat)){
+//         // console.log(emailField.value);
+//         emailNoEmailError.style.display ='block';
+//     }else {
+//        emailField.classList.add('success');
+//        emailField.classList.add('checked');
+//     }   
+// }
 // check phonenumber value 
-function checkPhoneValue(){
-    let phoneError = document.getElementById('phoneError')
-    let phoneField = document.getElementById('phone');
-    if(phoneField.value === ""){
-        phoneError.style.display = 'block';
-    } else {
-       phoneField.classList.add('success');
-       phoneField.classList.add('checked');
-    }      
-}
+// function checkPhoneValue(){
+//     if(phoneField.value === ""){
+//         phoneError.style.display = 'block';
+//     } else {
+//        phoneField.classList.add('success');
+//        phoneField.classList.add('checked');
+//     }      
+// }
 
 // check date value 
 function checkDateValue(){
-    let dateError = document.getElementById('dateError')
-    let dateField = document.getElementById('date');
     if(dateField.value === ""){
         dateError.style.display = 'block';
     } else {
@@ -206,8 +206,6 @@ function checkDateValue(){
 
 // check time value 
 function checkTimeValue(){
-    let timeError = document.getElementById('timeError')
-    let timeField = document.getElementById('time');
     if(timeField.value === ""){
         timeError.style.display = 'block';
     } else {
@@ -234,15 +232,17 @@ function resetForm(){
 }
 
 // submits the form
-function submitForm(){
-    let data = collectData();
+// function submitForm(){
+    // let data = collectData();
     // this is where we can send the HTTP request with the JSON data from
-    console.log("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
+    // console.log("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
     // resetForm();
     // setTimeout(() => {location.reload()}, 3000);
-    setTimeout(resetForm, 3000);
+    // setTimeout(resetForm, 3000);
     // e.preventDefault();
-} 
+// } 
+
+
 
 // check values of all the input fields
 
@@ -270,25 +270,150 @@ function formValidator(){
         dateField.classList.contains('checked') &&
         timeField.classList.contains('checked') &&
         type.classList.contains('checked')
-    ){
-        document.getElementById('inputForm').classList.add('everything-valid');
-    }   
-}
-
-//js for the animated button
-const animatedbtn = document.querySelector("[data-btn]")
-animatedbtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    checkDropdownValues();
-    checkFieldValues();
-    formValidator();
-    let inputForm = document.getElementById('inputForm');    
-    if(inputForm.classList.contains('everything-valid')){
-        animatedbtn.classList.add("animating");
-        let data = collectData();
-        console.log("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
+        ){
+            document.getElementById('inputForm').classList.add('everything-valid');
+        }   
     }
-});
+    
+
+//event listeners for each field (NAME)
+    
+    nameField.addEventListener('click', (e) => {
+        if(nameField.value === ""){
+            nameError.style.display = 'block';
+        } else {
+            nameError.style.display = 'none';
+            nameField.classList.remove('success');
+        }
+    });
+    nameField.addEventListener('keyup', (e) => {
+        if(nameField.value === ""){
+            nameError.style.display = 'block';
+        } else {
+            nameError.style.display = 'none';
+            nameField.classList.add('success');
+            nameField.classList.add('checked');
+        }
+    });
+    
+//event listeners for each field (EMAIL)  
+    //emailfield empty
+    emailField.addEventListener('click', (e) => {
+        if(emailField.value === ""){
+            emailEmptyError.style.display = 'block';
+        } else {
+            emailEmptyError.style.display = 'none';
+            emailField.classList.remove('success');
+        }
+    });
+    emailField.addEventListener('keyup', (e) => {
+        if(emailField.value === ""){
+            emailEmptyError.style.display = 'block';
+        } else {
+            emailEmptyError.style.display = 'none';
+        }    
+    });
+
+    //invalid email address
+    emailField.addEventListener('click', (e) => {
+        let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(!emailField.value.match(mailformat)){
+            emailNoEmailError.style.display = 'block';
+        } else {
+            emailNoEmailError.style.display = 'none';
+            emailField.classList.remove('success');
+        }
+    });
+    emailField.addEventListener('keyup', (e) => {
+        let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(!emailField.value.match(mailformat)){
+            emailNoEmailError.style.display = 'block';
+            emailField.classList.remove('success');
+        } else {
+            emailNoEmailError.style.display = 'none';
+            emailField.classList.add('success');
+            emailField.classList.add('checked');
+        }    
+    });
+
+//event listeners for each field (PHONE)      
+    phoneField.addEventListener('click', (e) => {
+        if(phoneField.value === ""){
+            phoneError.style.display = 'block';
+        } else {
+            phoneError.style.display = 'none';
+            phoneField.classList.remove('success');
+        }
+    });
+    phoneField.addEventListener('keyup', (e) => {
+        if(phoneField.value === ""){
+            phoneError.style.display = 'block';
+            phoneField.classList.remove('success');
+        } else {
+            phoneError.style.display = 'none';
+            phoneField.classList.add('success');
+            phoneField.classList.add('checked');
+        }
+    });
+
+//event listeners for each field (DATE)      
+    dateField.addEventListener('click', (e) => {
+        if(dateField.value === ""){
+            dateError.style.display = 'block';
+            // dateField.classList.remove('success');
+        } else {
+            dateError.style.display = 'none';
+            dateField.classList.add('success');
+        }
+    });
+    dateField.onblur = function(){
+        if(dateField.value === ""){
+            dateError.style.display = 'block';
+            dateField.classList.remove('success');    
+        } else {
+            dateError.style.display = 'none';
+            dateField.classList.add('success');
+            dateField.classList.add('checked');
+        }
+    };
+
+//event listeners for each field (TIME)      
+    timeField.addEventListener('click', (e) => {
+        if(timeField.value === ""){
+            timeError.style.display = 'block';
+            // timeField.classList.remove('success');
+        } else {
+            timeError.style.display = 'none';
+            timeField.classList.add('success');
+        }
+    });
+    timeField.onblur = function(){
+        if(timeField.value === ""){
+            timeError.style.display = 'block';
+            timeField.classList.remove('success');    
+        } else {
+            timeError.style.display = 'none';
+            timeField.classList.add('success');
+            timeField.classList.add('checked');
+        }
+    };
+
+
+
+//js for the animated button and to submit the form
+// const animatedbtn = document.querySelector("[data-btn]")
+// animatedbtn.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     checkDropdownValues();
+//     checkFieldValues();
+//     formValidator();
+//     let inputForm = document.getElementById('inputForm');    
+//     if(inputForm.classList.contains('everything-valid')){
+//         animatedbtn.classList.add("animating");
+//         let data = collectData();
+//         console.log("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
+//     }
+// });
 
 
 

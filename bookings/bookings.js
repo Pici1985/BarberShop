@@ -31,8 +31,14 @@ let dateError = document.getElementById('dateError');
 let timeField = document.getElementById('time');
 let timeError = document.getElementById('timeError');
 
+let type = document.getElementById("type");
 
+// variables for submit
 
+let submitButton = document.getElementById('submitButton');
+let inputForm = document.getElementById('inputForm');  
+let modalContent = document.getElementById('modalContent');
+let confirmButton = document.getElementById('confirmButton');  
 
 
 
@@ -89,7 +95,7 @@ document.getElementById("kids").addEventListener('click',function(e){
     spacer.remove();   
 });  
 
-// eventlistener for hairstyle dropdown
+// eventlistener for hairstyle dropdown to add success class and validate whole form
 elements = document.getElementsByClassName('hairstyle');
 
 Array.from(elements).forEach((element) => {
@@ -97,7 +103,8 @@ Array.from(elements).forEach((element) => {
         // console.log(event.target.innerText);
         document.querySelector('#hairStyleChoice').value = event.target.innerText;
         document.getElementById("type").style.border = "2px solid green";
-        document.getElementById("type").classList.add('checked');
+        document.getElementById("type").classList.add('success');
+        formValidator();
     });
 });
 
@@ -144,276 +151,225 @@ Array.from(elements).forEach((element) => {
     return Booking;
 }
 
-// checks is dropdowns have values at all
-function checkDropdownValues(){
-    console.log('check dropdown');
-    if(choice.value === ""){
-        document.getElementById("genderFeedback").classList.remove('visually-hidden');
-        document.getElementById("errorMessages").classList.remove('visually-hidden');
-        document.getElementById("type").style.border = "1px solid #dc3545";
+//event listeners for each field (NAME)
+
+nameField.addEventListener('click', (e) => {
+    if(nameField.value === ""){
+        nameError.style.display = 'block';
+    } else {
+        nameError.style.display = 'none';
+        nameField.classList.remove('success');
+        
     }
-    
-    if(hairStyleChoice.value === ""){
-        document.getElementById("hairStyleFeedback").classList.remove('visually-hidden');
-        document.getElementById("errorMessages").classList.remove('visually-hidden');
-        document.getElementById("type").style.border = "1px solid #dc3545";
+    formValidator();
+});
+nameField.addEventListener('keyup', (e) => {
+    if(nameField.value === ""){
+        nameError.style.display = 'block';
+        
+    } else {
+        nameError.style.display = 'none';
+        nameField.classList.add('success');
     }
-}
+    formValidator();
+});
 
+//event listeners for each field (EMAIL)  
 
-// check namefield values 
-// function checkNameValue(){
-//     if(nameField.value === ""){
-//         nameError.style.display = 'block';
-//     } else {
-//        nameField.classList.add('success');
-//        nameField.classList.add('checked');
-//     }   
-// }
+//emailfield empty
+emailField.addEventListener('click', (e) => {
+    if(emailField.value === ""){
+        emailEmptyError.style.display = 'block';
+        formValidator();
+    } else {
+        emailEmptyError.style.display = 'none';
+        emailField.classList.remove('success');
+        formValidator();
+    }
+});
+emailField.addEventListener('keyup', (e) => {
+    if(emailField.value === ""){
+        emailEmptyError.style.display = 'block';
+        formValidator();
+    } else {
+        emailEmptyError.style.display = 'none';
+        formValidator();
+    }    
+});
 
-// check emailfield values 
-// function checkEmailValue(){
-//     let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-//     if(emailField.value === ""){
-//         emailEmptyError.style.display = 'block';
-//     } else if (!emailField.value.match(mailformat)){
-//         // console.log(emailField.value);
-//         emailNoEmailError.style.display ='block';
-//     }else {
-//        emailField.classList.add('success');
-//        emailField.classList.add('checked');
-//     }   
-// }
-// check phonenumber value 
-// function checkPhoneValue(){
-//     if(phoneField.value === ""){
-//         phoneError.style.display = 'block';
-//     } else {
-//        phoneField.classList.add('success');
-//        phoneField.classList.add('checked');
-//     }      
-// }
+//invalid email address
+emailField.addEventListener('click', (e) => {
+    let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(!emailField.value.match(mailformat)){
+        emailNoEmailError.style.display = 'block';
+        formValidator();
+    } else {
+        emailNoEmailError.style.display = 'none';
+        emailField.classList.remove('success');
+        formValidator();
+    }
+});
+emailField.addEventListener('keyup', (e) => {
+    let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(!emailField.value.match(mailformat)){
+        emailNoEmailError.style.display = 'block';
+        emailField.classList.remove('success');
+        formValidator();
+    } else {
+        emailNoEmailError.style.display = 'none';
+        emailField.classList.add('success');
+        formValidator();
+    }    
+});
 
-// check date value 
-function checkDateValue(){
+//event listeners for each field (PHONE)      
+phoneField.addEventListener('click', (e) => {
+    if(phoneField.value === ""){
+        phoneError.style.display = 'block';
+        formValidator();
+    } else {
+        phoneError.style.display = 'none';
+        phoneField.classList.remove('success');
+        formValidator();
+    }
+});
+
+phoneField.addEventListener('keyup', (e) => {
+    if(phoneField.value === ""){
+        phoneError.style.display = 'block';
+        phoneField.classList.remove('success');
+        formValidator();
+    } else {
+        phoneError.style.display = 'none';
+        phoneField.classList.add('success');
+        formValidator();
+    }
+});
+
+//event listeners for each field (DATE)      
+dateField.addEventListener('click', (e) => {
     if(dateField.value === ""){
         dateError.style.display = 'block';
+        formValidator();
+        // dateField.classList.remove('success');
     } else {
-       dateField.classList.add('success');
-       dateField.classList.add('checked');
-    }      
-}
+        dateError.style.display = 'none';
+        dateField.classList.add('success');
+        formValidator();
+    }
+});
 
-// check time value 
-function checkTimeValue(){
+dateField.onblur = function(){
+    if(dateField.value === ""){
+        dateError.style.display = 'block';
+        dateField.classList.remove('success');
+        formValidator();
+    } else {
+        dateError.style.display = 'none';
+        dateField.classList.add('success');
+        formValidator();
+    }
+};
+
+//event listeners for each field (TIME)      
+timeField.addEventListener('click', (e) => {
     if(timeField.value === ""){
         timeError.style.display = 'block';
+        formValidator();
+        // timeField.classList.remove('success');
     } else {
-       timeField.classList.add('success');
-       timeField.classList.add('checked');
-    }      
-}
-
-// resets the form after submit 
-function resetForm(){
-    document.getElementById('inputForm').classList.remove('was-validated');
-    console.log('Resetform called');
-    choice.innerText = "";
-    hairStyleChoice.innerText = "";
-    if(gentsCuts){
-        gentsCuts.classList.add('visually-hidden');   
+        timeError.style.display = 'none';
+        timeField.classList.add('success');
+        formValidator();
     }
-    if(ladiesCuts){
-        ladiesCuts.classList.add('visually-hidden');   
+});
+timeField.onblur = function(){
+    if(timeField.value === ""){
+        timeError.style.display = 'block';
+        timeField.classList.remove('success');
+        formValidator();
+    } else {
+        timeError.style.display = 'none';
+        timeField.classList.add('success');
+        formValidator();
     }
-    if(kidsCuts){
-        kidsCuts.classList.add('visually-hidden');   
-    }
-}
-
-// submits the form
-// function submitForm(){
-    // let data = collectData();
-    // this is where we can send the HTTP request with the JSON data from
-    // console.log("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
-    // resetForm();
-    // setTimeout(() => {location.reload()}, 3000);
-    // setTimeout(resetForm, 3000);
-    // e.preventDefault();
-// } 
-
-
-
-// check values of all the input fields
-
-function checkFieldValues(){
-    checkNameValue();
-    checkEmailValue();
-    checkPhoneValue();
-    checkDateValue();
-    checkTimeValue();
 };
 
 // formvalidator
 
 function formValidator(){
-    let nameField = document.getElementById('name');
-    let emailField = document.getElementById('email');    
-    let phoneField = document.getElementById('phone');
-    let dateField = document.getElementById('date');
-    let timeField = document.getElementById('time');
-    let type = document.getElementById("type");
     if(
-        nameField.classList.contains('checked') &&
-        emailField.classList.contains('checked') &&
-        phoneField.classList.contains('checked') &&
-        dateField.classList.contains('checked') &&
-        timeField.classList.contains('checked') &&
-        type.classList.contains('checked')
+        nameField.classList.contains('success') &&
+        emailField.classList.contains('success') &&
+        phoneField.classList.contains('success') &&
+        dateField.classList.contains('success') &&
+        timeField.classList.contains('success') &&
+        type.classList.contains('success')
         ){
-            document.getElementById('inputForm').classList.add('everything-valid');
-        }   
-    }
+            submitButton.classList.remove('disabled');
+        }
+};
+
+// submit button
+
+submitButton.addEventListener('click', (e) => {
+    let data = collectData();
+    // console.log(data);
+    modalContent.innerHTML = `
+        <p><strong>Your name:</strong> ${data.name}</p>
+        <p><strong>Your email address:</strong> ${data.email}</p>
+        <p><strong>Your phone number:</strong> ${data.phone}</p>
+        <p><strong>Appointment date:</strong> ${data.date}</p>
+        <p><strong>Appointment time:</strong> ${data.time}</p>
+        <p><strong>Appointment type:</strong> ${data.gender} - ${data.style}</p>
+
+    `
+});
+
+//confirm button 
+
+confirmButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    // this is where we can send the HTTP request with the JSON data from
+    let data = collectData();
+    console.log("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
+    resetForm();
+});
+    
     
 
-//event listeners for each field (NAME)
-    
-    nameField.addEventListener('click', (e) => {
-        if(nameField.value === ""){
-            nameError.style.display = 'block';
-        } else {
-            nameError.style.display = 'none';
-            nameField.classList.remove('success');
-        }
-    });
-    nameField.addEventListener('keyup', (e) => {
-        if(nameField.value === ""){
-            nameError.style.display = 'block';
-        } else {
-            nameError.style.display = 'none';
-            nameField.classList.add('success');
-            nameField.classList.add('checked');
-        }
-    });
-    
-//event listeners for each field (EMAIL)  
-    //emailfield empty
-    emailField.addEventListener('click', (e) => {
-        if(emailField.value === ""){
-            emailEmptyError.style.display = 'block';
-        } else {
-            emailEmptyError.style.display = 'none';
-            emailField.classList.remove('success');
-        }
-    });
-    emailField.addEventListener('keyup', (e) => {
-        if(emailField.value === ""){
-            emailEmptyError.style.display = 'block';
-        } else {
-            emailEmptyError.style.display = 'none';
-        }    
-    });
-
-    //invalid email address
-    emailField.addEventListener('click', (e) => {
-        let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        if(!emailField.value.match(mailformat)){
-            emailNoEmailError.style.display = 'block';
-        } else {
-            emailNoEmailError.style.display = 'none';
-            emailField.classList.remove('success');
-        }
-    });
-    emailField.addEventListener('keyup', (e) => {
-        let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        if(!emailField.value.match(mailformat)){
-            emailNoEmailError.style.display = 'block';
-            emailField.classList.remove('success');
-        } else {
-            emailNoEmailError.style.display = 'none';
-            emailField.classList.add('success');
-            emailField.classList.add('checked');
-        }    
-    });
-
-//event listeners for each field (PHONE)      
-    phoneField.addEventListener('click', (e) => {
-        if(phoneField.value === ""){
-            phoneError.style.display = 'block';
-        } else {
-            phoneError.style.display = 'none';
-            phoneField.classList.remove('success');
-        }
-    });
-    phoneField.addEventListener('keyup', (e) => {
-        if(phoneField.value === ""){
-            phoneError.style.display = 'block';
-            phoneField.classList.remove('success');
-        } else {
-            phoneError.style.display = 'none';
-            phoneField.classList.add('success');
-            phoneField.classList.add('checked');
-        }
-    });
-
-//event listeners for each field (DATE)      
-    dateField.addEventListener('click', (e) => {
-        if(dateField.value === ""){
-            dateError.style.display = 'block';
-            // dateField.classList.remove('success');
-        } else {
-            dateError.style.display = 'none';
-            dateField.classList.add('success');
-        }
-    });
-    dateField.onblur = function(){
-        if(dateField.value === ""){
-            dateError.style.display = 'block';
-            dateField.classList.remove('success');    
-        } else {
-            dateError.style.display = 'none';
-            dateField.classList.add('success');
-            dateField.classList.add('checked');
-        }
-    };
-
-//event listeners for each field (TIME)      
-    timeField.addEventListener('click', (e) => {
-        if(timeField.value === ""){
-            timeError.style.display = 'block';
-            // timeField.classList.remove('success');
-        } else {
-            timeError.style.display = 'none';
-            timeField.classList.add('success');
-        }
-    });
-    timeField.onblur = function(){
-        if(timeField.value === ""){
-            timeError.style.display = 'block';
-            timeField.classList.remove('success');    
-        } else {
-            timeError.style.display = 'none';
-            timeField.classList.add('success');
-            timeField.classList.add('checked');
-        }
-    };
-
-
-
+// resets the form after submit 
+function resetForm(){
+    console.log('Resetform called');
+    choice.value = "";
+    hairStyleChoice.value = "";
+    nameField.value = "";
+    emailField.value = "";
+    phoneField.value = "";
+    dateField.value = "";
+    timeField.value = "";
+    gentsCuts.classList.add('visually-hidden');   
+    ladiesCuts.classList.add('visually-hidden');   
+    kidsCuts.classList.add('visually-hidden');
+    nameField.classList.remove('success');   
+    emailField.classList.remove('success');   
+    phoneField.classList.remove('success');   
+    dateField.classList.remove('success');   
+    timeField.classList.remove('success');  
+    type.style.border = "none";
+    type.classList.remove('success'); 
+}   
+            
 //js for the animated button and to submit the form
 // const animatedbtn = document.querySelector("[data-btn]")
 // animatedbtn.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     checkDropdownValues();
-//     checkFieldValues();
-//     formValidator();
-//     let inputForm = document.getElementById('inputForm');    
-//     if(inputForm.classList.contains('everything-valid')){
-//         animatedbtn.classList.add("animating");
-//         let data = collectData();
-//         console.log("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
-//     }
+    //     e.preventDefault();
+    //     let inputForm = document.getElementById('inputForm');    
+    //     if(inputForm.classList.contains('everything-valid')){
+        //         animatedbtn.classList.add("animating");
+        //     }
 // });
+
 
 
 

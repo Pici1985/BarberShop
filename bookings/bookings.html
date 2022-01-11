@@ -150,15 +150,21 @@
                 <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <h4 class="modal-title" id="staticBackdropLabel">Booking Confirmation</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                    ...
+                    <div class="modal-body mb-1 mt-1">
+                        <h4 class="mb-1 mt-1">You are about to send a Booking to BarberShop with these details: </h4>
+                        <div id="modalContent"></div>
+                        <h4 class="mb-1 mt-1">Do you confirm the booking? </h4>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
-                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Confirm</button>
-                        <button type="button" class="btn btn-danger">Cancel</button>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="confirmButton">
+                            Confirm
+                        </button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
                     </div>
                 </div>
                 </div>
@@ -170,9 +176,9 @@
             </button> -->
 
             <!-- simple button --> 
-            <div class="d-grid gap-2 shadow mt-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <div class="d-grid gap-2 shadow mt-3">
                 <!-- <button class="btn btn-dark p-3" onClick="submitForm();" type="submit">Send booking Request</button> -->
-                <button type="button"  class="btn btn-dark p-3"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button"  class="btn btn-dark p-3 disabled"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="submitButton">
                     Send booking Request
                 </button>
             </div>

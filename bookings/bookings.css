@@ -93,8 +93,31 @@ p{
 .success {
   border: 2px solid green; 
 }
-/* Animted button css only starts*/
 
+/* modal styles */
+
+.modal-body h4 {
+  text-align: left;
+}
+
+.modal-body div p {
+  text-align: left;
+  padding: 0px 25px;
+}
+
+#modalContent {
+  margin: 15px 0px;
+}
+
+.modal-dialog {
+  max-width: 300px;
+  margin: 1.75rem auto;
+} 
+
+
+
+/* Animted button css only starts*/
+/* 
 .button-holder{
     display: flex;
     justify-content: center;
@@ -227,7 +250,7 @@ p{
       stroke-dashoffset: 0;
     }
   }
-  
+   */
   /* Animted button css only ends*/
 
 
@@ -262,6 +285,11 @@ p{
         font-size: 0.75rem;
         font-weight: 900;       
     }
+
+    .modal-dialog {
+      max-width: 500px;
+      margin: 1.75rem auto;
+    } 
 }
 
 /* // Medium devices (tablets, 768px and up) */

@@ -1,8 +1,10 @@
 // Global variables
-let gender = ""; 
-let elements = "";
 
-// variables for dropdown field
+// let gender = ""; 
+
+// variables for dropdown fields
+// variables for dropdown fields
+// variables for dropdown fields
 
 let hairStyleChoice = document.getElementById('hairStyleChoice');
 let choice = document.getElementById('choice');
@@ -10,6 +12,7 @@ let gentsCuts = document.getElementById('gentsCuts');
 let ladiesCuts = document.getElementById('ladiesCuts');
 let kidsCuts = document.getElementById('kidsCuts');
 let spacer = document.getElementById('spacer');
+let elements = document.getElementsByClassName('hairstyle');
 
 // varibles for inputfields
 // varibles for inputfields
@@ -33,7 +36,7 @@ let timeError = document.getElementById('timeError');
 
 let type = document.getElementById("type");
 
-// variables for submit
+// variables for submit functinalities
 
 let submitButton = document.getElementById('submitButton');
 let inputForm = document.getElementById('inputForm');  
@@ -46,18 +49,25 @@ let confirmButton = document.getElementById('confirmButton');
 // functions needed for dropdown buttons
 
 document.getElementById("gents").addEventListener('click',function(e){
+    // to make sure there is no value after making a few choices
     if(hairStyleChoice.value !== ""){
         hairStyleChoice.value = "";    
     }
-    gender = e.target.innerText;   
-    // console.log(gender);
-    choice.value = gender;
+
+    // ez lehet h. nem kell
+    // gender = e.target.innerText;   
+    // choice.value = gender;
+
+    // ez lehet h. jo igy 
+    choice.value = e.target.innerText;
+
     gentsCuts.classList.remove('visually-hidden');
     ladiesCuts.classList.add('visually-hidden');
     kidsCuts.classList.add('visually-hidden');
-    document.getElementById("genderFeedback").classList.add('visually-hidden');
-    document.getElementById("hairStyleFeedback").classList.add('visually-hidden');
-    document.getElementById("errorMessages").classList.add('visually-hidden');
+    // document.getElementById("genderFeedback").classList.add('visually-hidden');
+    // document.getElementById("hairStyleFeedback").classList.add('visually-hidden');
+    // document.getElementById("errorMessages").classList.add('visually-hidden');
+
     spacer.remove();
 });    
 
@@ -65,15 +75,18 @@ document.getElementById("ladies").addEventListener('click',function(e){
     if(hairStyleChoice.value !== ""){
         hairStyleChoice.value = "";    
     }
-    gender = e.target.innerText;   
-    // console.log(gender);
-    choice.value = gender;
+
+    // gender = e.target.innerText;   
+    
+    choice.value = e.target.innerText;
+    
     gentsCuts.classList.add('visually-hidden');
     ladiesCuts.classList.remove('visually-hidden');
     kidsCuts.classList.add('visually-hidden');
-    document.getElementById("genderFeedback").classList.add('visually-hidden');
-    document.getElementById("hairStyleFeedback").classList.add('visually-hidden');
-    document.getElementById("errorMessages").classList.add('visually-hidden');
+
+    // document.getElementById("genderFeedback").classList.add('visually-hidden');
+    // document.getElementById("hairStyleFeedback").classList.add('visually-hidden');
+    // document.getElementById("errorMessages").classList.add('visually-hidden');
 
     spacer.remove();   
 });    
@@ -82,22 +95,22 @@ document.getElementById("kids").addEventListener('click',function(e){
     if(hairStyleChoice.value !== ""){
         hairStyleChoice.value = "";    
     }
-    gender = e.target.innerText;   
+
+    // gender = e.target.innerText;   
     // console.log(gender);
-    choice.value = gender;
+    choice.value = e.target.innerText;
+
     gentsCuts.classList.add('visually-hidden');
     ladiesCuts.classList.add('visually-hidden');
     kidsCuts.classList.remove('visually-hidden');
-    document.getElementById("genderFeedback").classList.add('visually-hidden');
-    document.getElementById("hairStyleFeedback").classList.add('visually-hidden');
-    document.getElementById("errorMessages").classList.add('visually-hidden');
+    // document.getElementById("genderFeedback").classList.add('visually-hidden');
+    // document.getElementById("hairStyleFeedback").classList.add('visually-hidden');
+    // document.getElementById("errorMessages").classList.add('visually-hidden');
 
     spacer.remove();   
 });  
 
 // eventlistener for hairstyle dropdown to add success class and validate whole form
-elements = document.getElementsByClassName('hairstyle');
-
 Array.from(elements).forEach((element) => {
     element.addEventListener('click', (event) => {
         // console.log(event.target.innerText);
@@ -111,7 +124,7 @@ Array.from(elements).forEach((element) => {
 
 // functions needed for submit
 
-// date setter function
+// date setter function to make sure user can not choose a date in the past
 (function(){
     let today = new Date();
     let dd = today.getDate();
@@ -122,14 +135,14 @@ Array.from(elements).forEach((element) => {
     } 
     if(mm<10){
         mm='0'+mm
-    } 
-    
+    }    
     today = yyyy+'-'+mm+'-'+dd;
+
+    // setting date fields minimum value to today's date
     document.getElementById("date").setAttribute("min", today);
-    // console.log('datesetter IIFE working.');
 })();
  
-  // gets data values out of form
+  // collects input data from the form
   function collectData(){
       let name = document.getElementById('name').value;    
       let email = document.getElementById('email').value;    
@@ -151,11 +164,11 @@ Array.from(elements).forEach((element) => {
     return Booking;
 }
 
-//event listeners for each field (NAME)
+//event listeners for each field (NAME) to validate field on keystroke and click
 
 nameField.addEventListener('click', (e) => {
     if(nameField.value === ""){
-        nameError.style.display = 'block';
+        nameError.style.display = 'flex';
     } else {
         nameError.style.display = 'none';
         nameField.classList.remove('success');
@@ -165,7 +178,7 @@ nameField.addEventListener('click', (e) => {
 });
 nameField.addEventListener('keyup', (e) => {
     if(nameField.value === ""){
-        nameError.style.display = 'block';
+        nameError.style.display = 'flex';
         
     } else {
         nameError.style.display = 'none';
@@ -174,12 +187,12 @@ nameField.addEventListener('keyup', (e) => {
     formValidator();
 });
 
-//event listeners for each field (EMAIL)  
+//event listeners for each field (EMAIL) to validate field on keystroke and click 
 
 //emailfield empty
 emailField.addEventListener('click', (e) => {
     if(emailField.value === ""){
-        emailEmptyError.style.display = 'block';
+        emailEmptyError.style.display = 'flex';
         formValidator();
     } else {
         emailEmptyError.style.display = 'none';
@@ -189,7 +202,7 @@ emailField.addEventListener('click', (e) => {
 });
 emailField.addEventListener('keyup', (e) => {
     if(emailField.value === ""){
-        emailEmptyError.style.display = 'block';
+        emailEmptyError.style.display = 'flex';
         formValidator();
     } else {
         emailEmptyError.style.display = 'none';
@@ -201,7 +214,7 @@ emailField.addEventListener('keyup', (e) => {
 emailField.addEventListener('click', (e) => {
     let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if(!emailField.value.match(mailformat)){
-        emailNoEmailError.style.display = 'block';
+        emailNoEmailError.style.display = 'flex';
         formValidator();
     } else {
         emailNoEmailError.style.display = 'none';
@@ -212,7 +225,7 @@ emailField.addEventListener('click', (e) => {
 emailField.addEventListener('keyup', (e) => {
     let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if(!emailField.value.match(mailformat)){
-        emailNoEmailError.style.display = 'block';
+        emailNoEmailError.style.display = 'flex';
         emailField.classList.remove('success');
         formValidator();
     } else {
@@ -222,10 +235,10 @@ emailField.addEventListener('keyup', (e) => {
     }    
 });
 
-//event listeners for each field (PHONE)      
+//event listeners for each field (PHONE) to validate field on keystroke and click     
 phoneField.addEventListener('click', (e) => {
     if(phoneField.value === ""){
-        phoneError.style.display = 'block';
+        phoneError.style.display = 'flex';
         formValidator();
     } else {
         phoneError.style.display = 'none';
@@ -236,7 +249,7 @@ phoneField.addEventListener('click', (e) => {
 
 phoneField.addEventListener('keyup', (e) => {
     if(phoneField.value === ""){
-        phoneError.style.display = 'block';
+        phoneError.style.display = 'flex';
         phoneField.classList.remove('success');
         formValidator();
     } else {
@@ -246,10 +259,10 @@ phoneField.addEventListener('keyup', (e) => {
     }
 });
 
-//event listeners for each field (DATE)      
+//event listeners for each field (DATE) to validate field on keystroke and click      
 dateField.addEventListener('click', (e) => {
     if(dateField.value === ""){
-        dateError.style.display = 'block';
+        dateError.style.display = 'flex';
         formValidator();
         // dateField.classList.remove('success');
     } else {
@@ -261,7 +274,7 @@ dateField.addEventListener('click', (e) => {
 
 dateField.onblur = function(){
     if(dateField.value === ""){
-        dateError.style.display = 'block';
+        dateError.style.display = 'flex';
         dateField.classList.remove('success');
         formValidator();
     } else {
@@ -271,12 +284,11 @@ dateField.onblur = function(){
     }
 };
 
-//event listeners for each field (TIME)      
+//event listeners for each field (TIME) to validate field on keystroke and click     
 timeField.addEventListener('click', (e) => {
     if(timeField.value === ""){
-        timeError.style.display = 'block';
+        timeError.style.display = 'flex';
         formValidator();
-        // timeField.classList.remove('success');
     } else {
         timeError.style.display = 'none';
         timeField.classList.add('success');
@@ -285,7 +297,7 @@ timeField.addEventListener('click', (e) => {
 });
 timeField.onblur = function(){
     if(timeField.value === ""){
-        timeError.style.display = 'block';
+        timeError.style.display = 'flex';
         timeField.classList.remove('success');
         formValidator();
     } else {
@@ -295,7 +307,7 @@ timeField.onblur = function(){
     }
 };
 
-// formvalidator
+// function to make sure all fields in the faorm are valid  
 
 function formValidator(){
     if(
@@ -306,11 +318,11 @@ function formValidator(){
         timeField.classList.contains('success') &&
         type.classList.contains('success')
         ){
-            submitButton.classList.remove('disabled');
+            submitButton.classList.remove('visually-hidden');
         }
 };
 
-// submit button
+// event listener for submit button
 
 submitButton.addEventListener('click', (e) => {
     let data = collectData();
@@ -358,17 +370,9 @@ function resetForm(){
     timeField.classList.remove('success');  
     type.style.border = "none";
     type.classList.remove('success'); 
+    submitButton.classList.add('visually-hidden');
 }   
             
-//js for the animated button and to submit the form
-// const animatedbtn = document.querySelector("[data-btn]")
-// animatedbtn.addEventListener("click", (e) => {
-    //     e.preventDefault();
-    //     let inputForm = document.getElementById('inputForm');    
-    //     if(inputForm.classList.contains('everything-valid')){
-        //         animatedbtn.classList.add("animating");
-        //     }
-// });
 
 
 

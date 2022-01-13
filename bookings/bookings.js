@@ -260,7 +260,8 @@ phoneField.addEventListener('keyup', (e) => {
 });
 
 //event listeners for each field (DATE) to validate field on keystroke and click      
-dateField.addEventListener('click', (e) => {
+
+dateField.oninput = (e) => {
     if(dateField.value === ""){
         dateError.style.display = 'flex';
         formValidator();
@@ -270,9 +271,9 @@ dateField.addEventListener('click', (e) => {
         dateField.classList.add('success');
         formValidator();
     }
-});
+};
 
-dateField.onblur = function(){
+dateField.onblur = () => {
     if(dateField.value === ""){
         dateError.style.display = 'flex';
         dateField.classList.remove('success');
@@ -284,8 +285,11 @@ dateField.onblur = function(){
     }
 };
 
+
+
 //event listeners for each field (TIME) to validate field on keystroke and click     
-timeField.addEventListener('click', (e) => {
+
+timeField.oninput = (e) => {
     if(timeField.value === ""){
         timeError.style.display = 'flex';
         formValidator();
@@ -294,7 +298,8 @@ timeField.addEventListener('click', (e) => {
         timeField.classList.add('success');
         formValidator();
     }
-});
+};
+
 timeField.onblur = function(){
     if(timeField.value === ""){
         timeError.style.display = 'flex';

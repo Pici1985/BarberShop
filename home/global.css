@@ -5,8 +5,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
-   }
+}
    
    body {
        /* itt height: 100vh volt amit ki kellet szednem mert szetcseszte az oldalakat ha volt benne content */  
@@ -26,8 +25,18 @@
        text-align: center;
        font-size: 5rem;
        color: #fff;
-   }
-   
+      }
+      
+  h3 {
+     font-family: 'Poppins', sans-serif;
+     font-weight: 600;
+  }
+  
+  .navbar {
+    position: relative;
+    z-index: 5;
+  }
+
    .navbar ul {
        width: 100vw;
        list-style-type: none;
@@ -89,15 +98,46 @@
        border-radius: 50%;
      }
 
-     my-footer {
-      height: 66px;
-      background-color: #c4c4c4;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0px 20px;
-      font-size: larger;
-      font-weight: 600;
-      color: #633d3d;
-      margin-top:auto;
-  }
+/* Global styles for footer start */
+
+my-footer {
+  height: 100px;
+  width: auto;
+  background-color: #c4c4c4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  font-size: larger;
+  font-weight: 600;
+  color: #633d3d;
+  margin-top: auto;
+}
+
+.createdBy{
+  display: flex;
+  align-items: center;
+}
+
+.createdBy a {
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  color: #633d3d;
+  padding: 0px 10px;
+  font-size: 22px;
+}
+
+.createdBy a:hover {
+  color: white;
+}
+
+.socials {
+  font-size: 40px   
+}
+
+.socials i:hover{
+  color: white;
+} 
+
+
+/* Global styles for footer end */

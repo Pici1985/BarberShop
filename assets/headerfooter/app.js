@@ -25,10 +25,25 @@ customElements.define('my-header', MyHeader);
 
 class MyFooter extends HTMLElement {
   connectedCallback(){
-    this.innerHTML =`   
-      <p>this footer comes from headerfooter app.js</p>
-      <p>&copy 2021</p>
-      <p>created by whoever</p>
+    this.innerHTML =`
+      <div>
+        <div class="createdBy">
+          <h3>created by: </h3>
+          <a href="">Brigi</a>
+          <a href="">Rita</a>
+          <a href="">Balazs</a>
+        </div>  
+      </div>
+
+      <div class="copyright">
+        <p>&copy 2021</p>
+      </div>
+
+      <div class="socials">
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-instagram-square"></i>
+      </div>
     `
   }
 }

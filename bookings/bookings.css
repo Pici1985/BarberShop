@@ -11,6 +11,13 @@
 p{
     margin: 0;
 }
+
+h3 {
+    font-family: 'Poppins', sans-serif!important;
+    margin: 0px;
+    font-size: 22px;
+}
+
 .navbar{
     height: 53px;
 } 

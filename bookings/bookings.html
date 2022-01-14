@@ -29,7 +29,7 @@
         </div>
         
         <!-- <form class="mb-5 needs-validation" novalidate  id="inputForm"> -->
-        <form class="mb-5 needs-validation"  id="inputForm">
+        <form class="mb-5 needs-validation col-10 m-auto"  id="inputForm">
             <div class="form-floating mt-3 shadow d-flex align-items-center">
                 <input type="text" class="form-control" id="name" placeholder="name@example.com" >
                 <label for="name">Your Name:</label>
@@ -54,19 +54,27 @@
             <div class="invalid-feedback" id="phoneError">
                 Please enter a phone number!! 
             </div>
-            <div class="form-floating  mt-3 shadow d-flex align-items-center">
-                <input type="date" min="" class="form-control" id="date" placeholder="Date">
-                <label for="date">Appointment Date:</label>
-            </div>    
-            <div class="invalid-feedback" id="dateError">
-                Please enter a valid date!!
-            </div>
-            <div class="form-floating  mt-3 shadow d-flex align-items-center">
-                <input type="time" class="form-control" id="time" placeholder="Time" >
-                <label for="time">Appointment Time:</label>
-            </div>    
-            <div class="invalid-feedback" id="timeError">
-                Please enter a valid time!!
+
+            <div class="date-time d-flex justify-content-between row">
+                <div class="datewrp col-6">
+                    <div class="form-floating  mt-3 shadow d-flex align-items-center">
+                        <input type="date" min="" class="form-control" id="date" placeholder="Date">
+                        <label for="date">Date:</label>
+                    </div>    
+                    <div class="invalid-feedback" id="dateError">
+                        Please enter a valid date!!
+                    </div>
+                </div>
+
+                <div class="timewrp col-6">
+                    <div class="form-floating  mt-3 shadow d-flex align-items-center">
+                        <input type="time" class="form-control" id="time" placeholder="Time" >
+                        <label for="time">Time:</label>
+                    </div>    
+                    <div class="invalid-feedback" id="timeError">
+                        Please enter a valid time!!
+                    </div>
+                </div>
             </div>
 
             

@@ -150,10 +150,11 @@ h1{
   font-size: 20px;
   position: absolute;
   top: 20px;
-  color:rgb(165, 112, 165);
+  color: #8B5B5B;
   right: 50px;
   margin: 0;
   opacity: 0;
+  text-shadow: 0.5px 0.5px 0.5px #000;
 
 }
 .image-gallery.large h2{

@@ -11,7 +11,7 @@
    body {
        /* itt height: 100vh volt amit ki kellet szednem mert szetcseszte az oldalakat ha volt benne content */  
        /* height: auto; */
-       background-image: linear-gradient(#fff 1rem, #8b5b5b);
+       background-image: linear-gradient(#fff 1px, #8b5b5b);
        background-repeat: no-repeat;
        display: flex;
        flex-direction: column;

@@ -38,6 +38,7 @@
        color: #633d3d;
        font-size: large;
        font-weight: 600;
+       z-index: 10;
    
        display: flex;
        justify-content: flex-end;

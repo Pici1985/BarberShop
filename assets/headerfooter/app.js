@@ -16,7 +16,7 @@ class MyHeader extends HTMLElement {
     </picture>
     <p class="solgen">It's your<br>time to shine</p>
     <svg>
-        <img src="../assets/img/global/logo.svg" alt="logo" class="logo">
+        <img src="../assets/img/global/logo.svg" alt="logo" class="logo animate__animated animate__flip animate__delay-1s" id="logo">
     </svg>
     `
   }

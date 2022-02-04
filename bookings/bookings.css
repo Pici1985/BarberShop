@@ -27,9 +27,14 @@ p{
     background-color: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 5px;
+
     /* position: relative;
     z-index: 1;
     backdrop-filter: blur(5px); */
+    
+    /* animation: backInDown; 
+    animation-duration: 3s;  */
+    /* --animate-delay: 3s; */
 }
 
 #type {
@@ -80,20 +85,6 @@ p{
     /* border-radius: 3px; */
 }
 
-/* .errorMessages{
-    background-color: white;
-    position: relative;
-    z-index: 2;
-    border: 1px solid #dc3545;
-    border-radius: 3px;
-}
-
-.errorMessages div{
-    color: #dc3545;
-    font-size: 14px;
-    padding: 5px 15px;
-} */
-
 .success {
   border: 2px solid green; 
 }
@@ -123,6 +114,14 @@ p{
     color: green;
     text-align: center;
 }
+
+/* Animations */
+/* .animate__animated.animate__backInRight {
+    --animate-delay: 1s;
+}
+.animate__animated.animate__backInUp {
+    --animate-delay: 2s;
+} */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 

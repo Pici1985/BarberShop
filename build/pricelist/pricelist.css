@@ -1,0 +1,38 @@
+.price-list {
+  margin: 0 auto; 
+  width: 80vw;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 150px;
+  flex-wrap: wrap;
+} 
+h2{
+  color: whitesmoke;
+  text-align: center;
+  font-size: 3rem;
+  margin: 20px;
+}
+caption{
+  padding: 25px;
+  color: whitesmoke; 
+  font-size: 2rem;
+}
+table{
+  color:#8B5B5B;
+  margin: 55px;
+  width: 30%;
+  background-color: rgb(245, 234, 234);
+  font-size: 1.5rem;
+  border-spacing: 10px;
+  box-shadow: 0.3rem 0.5rem rgba(0,0,0,.1);
+  border-radius: 10px;
+}
+@media screen and (max-width:992px) { 
+ 
+  table{
+    width:auto;
+  }
+  .price-list{
+    flex-direction: column;
+  }
+}

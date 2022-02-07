@@ -1,0 +1,215 @@
+/* // X-Small devices (portrait phones, less than 576px) */
+/* // No media query for `xs` since this is the default in Bootstrap */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,700;0,900;1,100;1,200;1,400;1,500;1,700;1,900&family=Rouge+Script&display=swap');
+
+
+/* general styles */
+*{
+    box-sizing: border-box;
+}
+
+p{
+    margin: 0;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif!important;
+    margin: 0px;
+    font-size: 22px;
+}
+
+.navbar{
+    height: 53px;
+} 
+.container {
+    /* background: white; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+} 
+
+/* appointment type field styles*/ 
+#inputForm{
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+
+    /* position: relative;
+    z-index: 1;
+    backdrop-filter: blur(5px); */
+    
+    /* animation: backInDown; 
+    animation-duration: 3s;  */
+    /* --animate-delay: 3s; */
+}
+
+#type {
+    padding: 9px 0.75rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    display: grid;
+    width: 100%; 
+}
+
+#type-inner {
+    justify-content: space-evenly;   
+}
+
+#spacer{
+    width: 60px;
+    /* font-size: 0.75rem;  */
+    font-weight: 900; 
+    
+}
+
+#choice {
+    /* width: 60px;     */
+    font-size: 1rem; 
+    font-weight: 900;
+    border: none;
+    text-align: center; 
+    
+}
+
+#hairStyleChoice{
+    /* width: 60px; */
+    font-size: 1rem; 
+    font-weight: 900; 
+    border: none;
+    text-align: center; 
+}
+
+.invalid-feedback{
+    background-color: transparent;
+    margin-top: 0px;
+    padding: 5px;
+    font-weight: bolder;
+    font-size: 1rem;
+    color: red;
+    /* border: 1px solid #dc3545; */
+    /* border-radius: 3px; */
+}
+
+.success {
+  border: 2px solid green; 
+}
+
+/* modal styles */
+
+.modal-body h4 {
+  text-align: left;
+}
+
+.modal-body div p {
+  text-align: left;
+  padding: 0px 25px;
+}
+
+#modalContent {
+  margin: 15px 0px;
+}
+
+.modal-dialog {
+  max-width: 300px;
+  margin: 1.75rem auto;
+} 
+
+/* secondary modal */
+#exampleModalLabel{
+    color: green;
+    text-align: center;
+}
+
+/* Animations */
+/* .animate__animated.animate__backInRight {
+    --animate-delay: 1s;
+}
+.animate__animated.animate__backInUp {
+    --animate-delay: 2s;
+} */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    #type {
+        padding: 9px 0.75rem;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    #type-inner{
+        display: flex!important;
+        justify-content: space-between!important;   
+    }
+    
+    #spacer{
+        width: 100px;
+        font-weight: 900;       
+    }
+    
+    #choice {
+        width: 100px;    
+        font-size: 0.75rem;
+        font-weight: 900;      
+    }
+    
+    #hairStyleChoice{
+        width: 100px;
+        font-size: 0.75rem;
+        font-weight: 900;       
+    }
+
+    .modal-dialog {
+      max-width: 500px;
+      margin: 1.75rem auto;
+    } 
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    #type {
+        padding: 9px 0.75rem;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    #type-inner{
+        display: flex!important;
+        justify-content: space-between!important;   
+    }
+    
+    #spacer{
+        width: 100px;
+        font-weight: 900;       
+    }
+    
+    #choice {
+        width: 150px;    
+        font-size: 1rem;
+        font-weight: 900;      
+    }
+    
+    #hairStyleChoice{
+        width: 150px;
+        font-size: 1rem;
+        font-weight: 900;       
+    }   
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { 
+}

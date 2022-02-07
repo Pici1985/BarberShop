@@ -1,0 +1,84 @@
+.content {
+  margin: auto;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  width: 65%;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+.hours {
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+.numbers {
+  display: flex;
+  justify-content: right;
+}
+
+.table {
+  background: white 0.1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.days {
+  display: inline;
+}
+
+.monday,
+.tuesday,
+.wednesday,
+.thursday,
+.friday,
+.saturday,
+.sunday {
+  font-size: 2.5rem;
+  margin: 0.8rem;
+  width: min-content;
+}
+
+.white {
+  height: 2.5rem;
+  width: 33rem;
+  margin: 1.1rem;
+  margin-right: 0;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: right;
+
+  position: relative;
+}
+
+.dark {
+  height: 2.5rem;
+  border-radius: 10px;
+  border: 2px solid white;
+  background-color: #b18b8b;
+  margin-top: 0;
+  margin-right: .5rem;
+
+  display: flex;
+  justify-content: left;
+
+  position: relative;
+}
+
+.monday1, .friday1 {  
+    width: 32rem;
+}
+
+.tuesday1, .wednesday1, .thursday1 {
+    width: 24rem;
+    margin-right: 3.5rem;
+}
+
+.saturday1{
+    width: 15rem;
+    margin-right: 17.5rem;
+}

@@ -16,8 +16,8 @@
 
   border-radius: 1.5rem;
   padding: 0.2rem;
-  height: 30rem;
-  width: 30rem;
+  height: 20rem;
+  width: 20rem;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -26,10 +26,10 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 30rem;
-  width: 30rem;
+  height: 20rem;
+  width: 20rem;
   margin-top: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
   text-align: left;

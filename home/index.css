@@ -39,12 +39,39 @@
 }
 
 .name {
-  
   font-size: xx-large;
   font-weight: 900;
   font-family: 'Poppins', sans-serif;
   text-shadow: 2px 2px #641252;
 }
 
+@media screen and (max-width: 576px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem
+  }
 
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .name {
+    text-align: center;
+  }
 
+  .portrait.rossel {
+    order: -3;
+  }
+
+  .profile.rossel {
+    order: -2;
+  }
+
+  .portrait.smith {
+    order: -1;
+  }
+
+}

@@ -6,26 +6,36 @@
   padding-bottom: 150px;
   flex-wrap: wrap;
 } 
-h2{
+/*h2{
   color: whitesmoke;
   text-align: center;
   font-size: 3rem;
   margin: 20px;
-}
+
+}*/
 caption{
+  border-radius: 1.5rem;
   padding: 25px;
   color: whitesmoke; 
-  font-size: 2rem;
-}
+  text-shadow: 2px 2px #641252;
+  font-size: xx-large;
+  font-weight: 900;
+  font-family: 'Poppins', sans-serif;
+  }
+
 table{
   color:#8B5B5B;
   margin: 55px;
   width: 30%;
   background-color: rgb(245, 234, 234);
   font-size: 1.5rem;
+  border: 2px solid whitesmoke;
   border-spacing: 10px;
-  box-shadow: 0.3rem 0.5rem rgba(0,0,0,.1);
-  border-radius: 10px;
+ /* box-shadow: 0.3rem 0.5rem rgba(0,0,0,.1);*/
+  border-radius: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem;
 }
 @media screen and (max-width:992px) { 
  

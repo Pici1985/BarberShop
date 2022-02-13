@@ -1,33 +1,57 @@
-.content {
+
+html, body {
+  height: 100%;
+} 
+
+.contentOT {
   margin: auto;
   margin-top: 3rem;
   margin-bottom: 5rem;
-  width: 65%;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
   color: white;
+  width: 60%;
+}
+
+.tableOT {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
   border-radius: 0.5rem;
-}
 
-.hours {
-  font-size: 1.7rem;
-  font-weight: 900;
-}
 
-.numbers {
-  display: flex;
-  justify-content: right;
-}
-
-.table {
-  background: white 0.1;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: min-content 3fr;
+  grid-template-rows:  repeat(8, 3rem);
+  gap: 15px;
+  justify-items: stretch;
 }
 
 .days {
-  display: inline;
+  grid-column: 1 / 2;
+  grid-row: 2 / last-line;
+  justify-self: flex-end;
+  align-self: end;
+}
+
+.hours {
+  
+  grid-column: 2 / last-line;
+  grid-row: 1 / last-line;
+
+  align-self: end;
+ }
+
+.numbers {
+  grid-column: 2 / last-line;
+  grid-row: 1 / 2;
+
+  font-size: 1.7rem;
+  font-weight: 900;
+
+  display: flex;
+  justify-content: space-evenly;
+
+width: 100%;
+
+  
 }
 
 .monday,
@@ -39,20 +63,61 @@
 .sunday {
   font-size: 2.5rem;
   margin: 0.8rem;
-  width: min-content;
+
+  
 }
+
+ /* .monday {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+} */
+
+/* .monday1 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}  */
+
+/*
+.tuesday {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.wednesday {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+
+.thursday {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+}
+
+.friday {
+  grid-column: 1 / 2;
+  grid-row: 6 / 7;
+}
+.saturday {
+  grid-column: 1 / 2;
+  grid-row: 7 / 8;
+}
+.sunday {
+  grid-column: 1 / 2;
+  grid-row: 8 / 9;
+} */
+
+
 
 .white {
   height: 2.5rem;
-  width: 33rem;
   margin: 1.1rem;
   margin-right: 0;
   border-radius: 10px;
   background-color: white;
+ 
   display: flex;
-  justify-content: right;
-
-  position: relative;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .dark {
@@ -66,19 +131,18 @@
   display: flex;
   justify-content: left;
 
-  position: relative;
 }
 
-.monday1, .friday1 {  
-    width: 32rem;
+.mondayLine, .fridayLine {
+    width: 90%;
 }
 
-.tuesday1, .wednesday1, .thursday1 {
-    width: 24rem;
-    margin-right: 3.5rem;
+.tuesdayLine, .wednesdayLine, .thursdayLine {
+    width: 62%;
+    margin-right: 7%;
 }
 
-.saturday1{
-    width: 15rem;
-    margin-right: 17.5rem;
+.saturdayLine {
+    width: 34%;
+    margin-right: 35%;
 }

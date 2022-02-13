@@ -1,14 +1,15 @@
-
-
-.contentOT {
+.content {
   margin: auto;
   margin-top: 3rem;
   margin-bottom: 5rem;
   color: white;
-  width: 60%;
+  width: 75%;
+}
+.list {
+  display: none;
 }
 
-.tableOT {
+.table {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 0.5rem;
@@ -16,7 +17,7 @@
 
   display: grid;
   grid-template-columns: min-content 3fr;
-  grid-template-rows:  repeat(8, 3rem);
+  grid-template-rows: repeat(8, 3rem);
   gap: 15px;
   justify-items: stretch;
 }
@@ -29,12 +30,11 @@
 }
 
 .hours {
-  
   grid-column: 2 / 5;
   grid-row: 1 / 9;
 
   align-self: end;
- }
+}
 
 .numbers {
   grid-column: 2 / 5;
@@ -46,8 +46,7 @@
   display: flex;
   justify-content: space-evenly;
 
-width: 100%;
-  
+  width: 100%;
 }
 
 .monday,
@@ -59,50 +58,7 @@ width: 100%;
 .sunday {
   font-size: 2.5rem;
   margin: 0.8rem;
-
-  
 }
-
- /* .monday {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-} */
-
-/* .monday1 {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-}  */
-
-/*
-.tuesday {
-  grid-column: 1 / 2;
-  grid-row: 3 / 4;
-}
-
-.wednesday {
-  grid-column: 1 / 2;
-  grid-row: 4 / 5;
-}
-
-.thursday {
-  grid-column: 1 / 2;
-  grid-row: 5 / 6;
-}
-
-.friday {
-  grid-column: 1 / 2;
-  grid-row: 6 / 7;
-}
-.saturday {
-  grid-column: 1 / 2;
-  grid-row: 7 / 8;
-}
-.sunday {
-  grid-column: 1 / 2;
-  grid-row: 8 / 9;
-} */
-
-
 
 .white {
   height: 2.5rem;
@@ -110,12 +66,10 @@ width: 100%;
   margin-right: 0;
   border-radius: 10px;
   background-color: white;
- 
+
   display: flex;
   justify-content: center;
   flex-grow: 1;
- 
-
 }
 
 .dark {
@@ -124,23 +78,80 @@ width: 100%;
   border: 2px solid white;
   background-color: #b18b8b;
   margin-top: 0;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 
   display: flex;
   justify-content: left;
-
 }
 
-.mondayLine, .fridayLine {
-    width: 90%;
+.mondayLine,
+.fridayLine {
+  width: 90%;
 }
 
-.tuesdayLine, .wednesdayLine, .thursdayLine {
-    width: 62%;
-    margin-right: 7%;
+.tuesdayLine,
+.wednesdayLine,
+.thursdayLine {
+  width: 62%;
+  margin-right: 7%;
 }
 
 .saturdayLine {
-    width: 34%;
-    margin-right: 35%;
+  width: 34%;
+  margin-right: 35%;
+}
+
+
+@media screen and (max-width: 992px) {
+  .content {
+    width: 100%;
+  }
+
+  .numbers {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .monday,
+  .tuesday,
+  .wednesday,
+  .thursday,
+  .friday,
+  .saturday,
+  .sunday {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+.table {
+  display: none;
+}
+.list{
+  margin: 0 auto; 
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+table{
+  color:#8B5B5B;
+  width: 70%;
+  font-size: 2rem;
+  border: 2px solid whitesmoke;
+  border-spacing: 10px;
+  border-radius: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem;
+  display: flex;
+  justify-content: center;
+}
+
 }

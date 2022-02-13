@@ -5,26 +5,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BarberShop | Opening Time</title>
-  <title>Opening Time</title>
 
-  <!-- fontawesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- animate css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
+ <!-- fontawesome -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- global stylesheet -->
   <link rel="stylesheet" href="../home/global.css">
+
+  <!-- own custom stylesheet -->
   <link rel="stylesheet" href="./openingtime.css">
+
+  <title>BarberShop | Opening Time</title>
   <link rel="icon" href="../assets/img/global/logo.svg">
 </head>
 
 <body>
-  <my-header></my-header>
-  <h1>Opening time</h1>
+  <div class="cover">
+    <my-header></my-header>
+    <h1>
+      Opening time
+    </h1>
+  </div>
 
-  <div class="contentOT">
+  <div class="content">
 
-    <div class="tableOT">
+    <div class="table">
 
       <div class="days">
         <div class="monday">Monday</div>
@@ -38,7 +46,7 @@
 
       <div class="hours">
 
-        <div class="numbers"> 
+        <div class="numbers">
           <div>7</div>
           <div>8</div>
           <div>9</div>
@@ -52,7 +60,7 @@
           <div>17</div>
           <div>18</div>
           <div>19</div>
-        
+
         </div>
 
         <div class="lines">
@@ -80,7 +88,41 @@
       </div>
 
     </div>
-
+<div class="list">
+  <table>
+    
+    <tbody>
+      <tr>
+        <td>Monday</td>
+        <td>8 - 19</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>10 - 17</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>10 - 17</td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>10 - 17</td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td>8 - 19</td>
+      </tr>
+      <tr>
+        <td>Saturday</td>
+        <td>10 - 13</td>
+      </tr>
+      <tr>
+        <td>Sunday</td>
+        <td>closed</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
   </div>
 
   <my-footer></my-footer>

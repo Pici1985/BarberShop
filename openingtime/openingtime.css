@@ -5,11 +5,11 @@
   color: white;
   width: 75%;
 }
-.list {
+.listOT {
   display: none;
 }
 
-.table {
+.tableOT {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 0.5rem;
@@ -22,21 +22,21 @@
   justify-items: stretch;
 }
 
-.days {
+.daysOT {
   grid-column: 1 / 2;
   grid-row: 2 / 9;
   justify-self: flex-end;
   align-self: end;
 }
 
-.hours {
+.hoursOT {
   grid-column: 2 / 5;
   grid-row: 1 / 9;
 
   align-self: end;
 }
 
-.numbers {
+.numbersOT {
   grid-column: 2 / 5;
   grid-row: 1 / 2;
 
@@ -49,15 +49,15 @@
   width: 100%;
 }
 
-.monday,
-.tuesday,
-.wednesday,
-.thursday,
-.friday,
-.saturday,
-.sunday {
-  font-size: 2.5rem;
-  margin: 0.8rem;
+.mondayOT,
+.tuesdayOT,
+.wednesdayOT,
+.thursdayOT,
+.fridayOT,
+.saturdayOT,
+.sundayOT {
+  font-size: 2.25rem;
+  margin: 0.3rem;
 }
 
 .white {
@@ -107,20 +107,21 @@
     width: 100%;
   }
 
-  .numbers {
+  .numbersOT {
     font-size: 1.5rem;
     font-weight: 700;
   }
 
-  .monday,
-  .tuesday,
-  .wednesday,
-  .thursday,
-  .friday,
-  .saturday,
-  .sunday {
-    font-size: 2.5rem;
+.mondayOT,
+.tuesdayOT,
+.wednesdayOT,
+.thursdayOT,
+.fridayOT,
+.saturdayOT,
+.sundayOT {
+    font-size: 2rem;
     font-weight: 500;
+    margin: .62rem;;
   }
 }
 
@@ -129,10 +130,10 @@
     font-size: 2.5rem;
   }
   
-.table {
+.tableOT {
   display: none;
 }
-.list{
+.listOT {
   margin: 0 auto; 
   width: 100%;
   display: flex;

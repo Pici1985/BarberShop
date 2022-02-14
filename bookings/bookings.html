@@ -163,52 +163,9 @@
                 </div>
             </div>
             
-            <!-- main Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h4 class="modal-title" id="staticBackdropLabel">Booking Confirmation</h4>
-                    <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body mb-1 mt-1">
-                        <p class="mb-1 mt-1"><strong>You are about to send a Booking to BarberShop with these details: </strong></p>
-                        <div id="modalContent"></div>
-                        <p class="mb-1 mt-1"><strong>Do you confirm the booking?</strong> </p>
-                    </div>
-                    <div class="modal-footer d-flex justify-content-center">
-                            <button type="button" class="btn btn-success col-12" data-bs-dismiss="modal" id="confirmButton" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Confirm
-                            </button>                      
-                            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Launch demo modal
-                            </button> -->
-                    </div>
-                </div>
-                </div>
-            </div>
-
-            <!-- exapmle Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3 class="modal-title" id="exampleModalLabel">Confirmed!!</h3>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <i class="far fa-check-circle fa-10x" style="color: green;"></i>
-                        </div>
-                        <!-- <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-
             
-
+            
+            
             
             <!-- simple button --> 
             <div class="d-grid gap-2 shadow mt-3">
@@ -219,6 +176,50 @@
             </div>
         </form>        
     </div>    
+
+    <!-- main Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title" id="staticBackdropLabel">Booking Confirmation</h4>
+            <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mb-1 mt-1">
+                <p class="mb-1 mt-1"><strong>You are about to send a Booking to BarberShop with these details: </strong></p>
+                <div id="modalContent"></div>
+                <p class="mb-1 mt-1"><strong>Do you confirm the booking?</strong> </p>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-success col-12" data-bs-dismiss="modal" id="confirmButton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Confirm
+                    </button>                      
+                    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Launch demo modal
+                    </button> -->
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- exapmle Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Confirmed!!</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <i class="far fa-check-circle fa-10x" style="color: green;"></i>
+                </div>
+                <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
     
     <div class="push"></div>  
 </div>
@@ -226,10 +227,10 @@
 <my-footer></my-footer>
 
 <!-- bootstrap js -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- custom js -->
-<script src="./bookings.js"></script>
+    <script type="module" src="./bookings.js"></script>
     <script src="../assets/headerfooter/app.js"></script>
     
 </body>

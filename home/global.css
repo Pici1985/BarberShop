@@ -142,5 +142,20 @@ my-footer {
   color: white;
 } 
 
+@media screen and (max-width: 576px) {
+  .socials {
+    font-size: 20px   
+  }
+
+  .createdBy a {
+    font-size: 20px;
+  }
+  .createdBy p {
+    font-size: 20px;
+  }
+  .createdBy h3 {
+    font-size: 20px;
+  }
+}
 
 /* Global styles for footer end */

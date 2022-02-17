@@ -39,7 +39,7 @@ function formValidator(){
 
 // resets the form after submit 
 function resetForm(){
-    console.log('Resetform called');
+    // console.log('Resetform called');
     choice.value = "";
     hairStyleChoice.value = "";
     nameField.value = "";
@@ -60,4 +60,65 @@ function resetForm(){
     submitButton.classList.add('visually-hidden');
 }  
 
-export { resetForm, formValidator, collectData };
+let entriesArray = "";
+
+function dataSaver(data){
+  // localStorage.clear();
+  let nrOfBookings = localStorage.length;
+  // console.log(localStorage.length);
+  let booking = "id " + nrOfBookings;
+  // console.log(JSON.stringify(data));
+  // console.log(bookings);
+  localStorage.setItem(booking, JSON.stringify(data));
+  dataGetter();
+}
+
+function dataGetter(){
+  let object = localStorage;
+  let entries = Object.entries(object); 
+  console.log(entries);
+  entriesArray = entries;
+  dataDisplayer(entries);
+  document.querySelectorAll(".trashcan").forEach(el => {
+      el.addEventListener('click', () =>{
+          alert("Trashcan doesn`t work yet!!");
+      })    
+  });
+    
+  document.querySelectorAll(".pencil").forEach(el => {
+      el.addEventListener('click', () =>{
+          alert("Pencil doesn`t work yet!!");
+      })    
+  });
+}
+
+function dataDisplayer(entries){
+  let bookingContainer = document.getElementById("bookingContainer");
+  bookingContainer.innerHTML = "";
+  entries.forEach((line) => {
+    let bookingDetails = JSON.parse(line[1]);
+    let div = document.createElement("div");
+    div.classList.add('bookingWrapper')
+    div.classList.add('text-start')
+    div.innerHTML = `
+    <div class="card m-1 p-3">
+      <div>
+        <p><span> Name: </span> ${bookingDetails.name}</p>
+        <p><span> Email: </span> ${bookingDetails.email}</p>
+        <p><span> Phone number: </span> ${bookingDetails.phone}</p>
+        <p><span> Date: </span> ${bookingDetails.date}</p>
+        <p><span> Time: </span> ${bookingDetails.time}</p>
+        <p><span> Gender: </span> ${bookingDetails.gender}</p>
+        <p><span> Style: </span> ${bookingDetails.style}</p>
+      </div>
+      <div class="icons">
+        <button class="btn btn-outline-danger m-1 trashcan"><i class="fa fa-trash-alt"></i></button>
+        <button class="btn btn-outline-success m-1 pencil"><i class="fa fa-pencil-alt"></i></i></button>
+      </div>
+    </div>
+    `;
+    bookingContainer.appendChild(div);  
+  });
+}
+
+export { resetForm, formValidator, collectData, dataSaver, dataDisplayer, dataGetter };

@@ -1,5 +1,5 @@
 import  { hairStyleChoice, choice, gentsCuts, ladiesCuts, kidsCuts, spacer, elements, nameField, nameError, emailField, emailEmptyError, emailNoEmailError,phoneField, phoneError,dateField, dateError, timeField, timeError, type, submitButton,  modalContent, confirmButton } from "./variables.js"; 
-import { resetForm, formValidator, collectData } from "./functions.js";
+import { resetForm, formValidator, collectData, dataSaver, dataGetter } from "./functions.js";
 
 
 // date setter function to make sure user can not choose a date in the past
@@ -250,16 +250,25 @@ confirmButton.addEventListener('click', (e) => {
     e.preventDefault();
     // this is where we can send the HTTP request with the JSON data from
     let data = collectData();
-    console.log("This is the JSON object that we can send to the backend: " + JSON.stringify(data));
+    dataSaver(data);
+    // dataDisplayer(data);
     resetForm();
 });
-    
-    
+
+dataGetter();
 
 
-            
+// document.querySelectorAll(".trashcan").forEach(el => {
+//     el.addEventListener('click', () =>{
+//         alert("Trashcan doesn`t work yet!!");
+//     })    
+// });
 
-
+// document.querySelectorAll(".pencil").forEach(el => {
+//     el.addEventListener('click', () =>{
+//         alert("Pencil doesn`t work yet!!");
+//     })    
+// });
 
 
 

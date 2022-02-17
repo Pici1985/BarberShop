@@ -98,6 +98,41 @@ h3 {
   border: 2px solid green; 
 }
 
+/* bookingcontainer styles start*/
+
+#bookingContainer {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.bookingWrapper .card {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    min-height: 230px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.icons button {
+    width: 40px;
+}
+
+.bookingWrapper div p span {
+    font-weight: bolder;
+}
+
+
+
+/* bookingcontainer styles end*/
+
 /* modal styles */
 
 .modal-body h4 {
@@ -135,6 +170,10 @@ h3 {
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
+    #bookingContainer {
+        grid-template-columns: 1fr;    
+    }
+
     #type {
         padding: 9px 0.75rem;
         border: 1px solid black;
@@ -171,7 +210,10 @@ h3 {
 }
 
 /* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
+    #bookingContainer {
+        grid-template-columns: 1fr;    
+    } 
     #type {
         padding: 9px 0.75rem;
         border: 1px solid black;
@@ -203,13 +245,17 @@ h3 {
 }
 
 /* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
-    
+@media (min-width: 992px) {
+    #bookingContainer {
+        grid-template-columns: 1fr 1fr;    
+    }     
 }
 
 /* // X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
-    
+    #bookingContainer {
+        grid-template-columns: 1fr 1fr 1fr;    
+    }    
 }
 
 /* // XX-Large devices (larger desktops, 1400px and up) */

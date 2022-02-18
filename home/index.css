@@ -11,8 +11,8 @@
 
 .portrait {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 
   border-radius: 1.5rem;
   padding: 0.2rem;
@@ -24,8 +24,8 @@
 
 .profile {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   
   height: 20rem;
   width: 20rem;
@@ -60,6 +60,11 @@
   }
   
   .name {
+    text-align: center;
+  }
+
+
+  .profile {
     text-align: center;
   }
 

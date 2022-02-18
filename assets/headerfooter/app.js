@@ -1,16 +1,25 @@
 class MyHeader extends HTMLElement {
-  connectedCallback(){
-    this.innerHTML =`
-    <div class="navbar">
-      <ul>
-          <li><a href="../home/index.html">Home</a></li>
-          <li><a href="../aboutUs/aboutus.html">About us</a></li>
-          <li><a href="../gallery/gallery.html">Gallery</a></li>
-          <li><a href="../pricelist/pricelist.html">Price list</a></li>
-          <li><a href="../openingtime/openingtime.html">Opening times</a></li>
-          <li><a href="../bookings/bookings.html">Booking</a></li>
-      </ul>
-    </div>
+  connectedCallback() {
+    this.innerHTML = `
+   
+
+    <nav class="nav navbar-expand-lg navbar-light navbar justify-content-end ">
+        
+    <a class="navbar-brand" aria-current="page" href="../home/index.html"><img src="../assets/img/global/logo.svg" alt="" width="40" height="30" ></a>
+    
+        <ul class="navbar-nav nav ">
+            <li class="nav-item "><a class="nav-link active" aria-current="page" href="../aboutUs/aboutus.html">About us</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="../gallery/gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="../pricelist/pricelist.html">Price list</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="../openingtime/openingtime.html">Opening times</a></li>
+            <li class="nav-item"><a class="nav-link active"  aria-current="page" href="../bookings/bookings.html">Booking</a></li>
+        </ul>
+    
+</nav>
+
+
+
+
     <picture>
         <img src="../assets/img/global/brandPicture.jpg" alt="BrandPicture" class="brandPicture">
     </picture>
@@ -24,8 +33,8 @@ class MyHeader extends HTMLElement {
 customElements.define('my-header', MyHeader);
 
 class MyFooter extends HTMLElement {
-  connectedCallback(){
-    this.innerHTML =`
+  connectedCallback() {
+    this.innerHTML = `
       <div>
         <div class="createdBy">
           <h3>created by: </h3>

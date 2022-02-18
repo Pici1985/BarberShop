@@ -125,6 +125,23 @@ my-footer {
 
 .socials i:hover {
   color: white;
+} 
+
+@media screen and (max-width: 576px) {
+  .socials {
+    font-size: 20px   
+  }
+
+  .createdBy a {
+    font-size: 20px;
+  }
+  .createdBy p {
+    font-size: 20px;
+  }
+  .createdBy h3 {
+    font-size: 20px;
+  }
+>>>>>>> 3e2db36ced285798a4512d2609efb26737a76435
 }
 
 /* Global styles for footer end */

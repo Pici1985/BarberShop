@@ -64,7 +64,7 @@ let entriesArray = "";
 
 function dataSaver(data){
   // localStorage.clear();
-  let nrOfBookings = localStorage.length;
+  let nrOfBookings = Math.floor(Math.random() * 1000);
   // console.log(localStorage.length);
   let booking = "id " + nrOfBookings;
   // console.log(JSON.stringify(data));

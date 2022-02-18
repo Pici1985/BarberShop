@@ -33,9 +33,6 @@ h3 {
   margin: 0px;
 }
 
-my-header{
-  
-}
 .navbar {
   position: fixed;
   width: 100vw;
@@ -46,7 +43,8 @@ my-header{
 }
 
 .navbar-brand{
-  margin-right: 39%;
+  margin-right: auto;
+  margin-left: 0.5rem;
   background-color: #fff;
   border-radius: 50%;
   border: 1px solid black;
@@ -57,7 +55,11 @@ my-header{
   padding-right: 2rem;
 }
 
-
+@media screen and (max-width: 576px) {
+  .navbar-brand {
+    margin-right: auto;
+  }
+}
 
 .brandPicture {
   display: block;

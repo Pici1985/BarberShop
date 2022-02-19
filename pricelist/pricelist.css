@@ -15,7 +15,7 @@
   margin: 20px;
 
 }*/
-caption {
+.caption2{
   border-radius: 1.5rem;
   padding: 25px;
   color: whitesmoke; 
@@ -25,12 +25,10 @@ caption {
   font-family: 'Poppins', sans-serif;
   }
 
-table {
+div.table-caption {
   color:#8B5B5B;
   margin: 55px;
   width: 30%;
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-  background-color: rgba(255, 255, 255, 0.1);
   padding: 0.2rem;
   
   font-size: 1.5rem;
@@ -38,10 +36,16 @@ table {
   background-color: rgb(245, 234, 234);*/
   border-spacing: 10px;
  /* box-shadow: 0.3rem 0.5rem rgba(0,0,0,.1);*/
-  border-radius: 1.5rem;
   
   padding: 0.2rem;
 }
+
+div.table-caption table {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-radius: 1.5rem;
+}
+
 @media screen and (max-width:992px) { 
  
   table {
